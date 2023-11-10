@@ -20,7 +20,7 @@ export default async function PokeDataFetching() {
       order: data.order,
       types: {
         type1: data.types[0]?.type?.name || null,
-        type2: data.types.length > 1 ? data.types[1].type.name : null,
+        type2: data.types.length > 1 ? data.types[1].type.name : "",
       },
       sprite: data.sprites.versions["generation-vi"]["x-y"].front_default,
     });
