@@ -1,5 +1,5 @@
 // "use client";
-import PokemonList from "./components/PokemonList";
+import PokemonList from "./sections/PokemonList";
 
 export default async function Home() {
   // const res = await fetch(`https://pokeapi.co/api/v2/pokemon/1/`);

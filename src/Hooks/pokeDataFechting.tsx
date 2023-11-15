@@ -1,9 +1,9 @@
-type PokemonData = {
+export type PokemonData = {
   name: string;
   order: number;
   types: {
-    type1: string | null;
-    type2: string | null;
+    type1: string;
+    type2: string;
   };
   sprite: string;
 };
