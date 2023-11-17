@@ -1,9 +1,13 @@
-import { Box } from "@mui/material";
+import { AppBar } from "@mui/material";
 
 import React from "react";
 
 const Footer = () => {
-  return <Box sx={styles.footer}>Footer</Box>;
+  return (
+    <AppBar color="primary" sx={styles.footer}>
+      Footer
+    </AppBar>
+  );
 };
 
 export default Footer;
@@ -17,7 +21,7 @@ const styles = {
     height: "50px",
     backgroundColor: "#1B2021",
     color: "white",
-    position: "absolute",
+    top: "auto",
     bottom: 0,
   },
 };

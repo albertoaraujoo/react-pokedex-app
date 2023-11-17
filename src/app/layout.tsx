@@ -22,11 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Navbar />
       <Container maxWidth="lg">
-        <body className={roboto.className}>{children}</body>
+        <body className={roboto.className}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
       </Container>
-      <Footer />
     </html>
   );
 }

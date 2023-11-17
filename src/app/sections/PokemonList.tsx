@@ -47,14 +47,15 @@ const styles = {
   container: {
     display: "flex",
     justifyContent: "center",
-    boxSizing: "border-box",
+    // boxSizing: "border-box",
     alignItems: "center",
     gap: "30px",
     width: "90%",
     overflow: "auto",
     flexWrap: "wrap",
+
     marginTop: "80px",
-    marginBottom: "20px",
+    marginBottom: "80px",
   },
   nameAndNumber: {
     display: "flex",
