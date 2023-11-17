@@ -18,6 +18,7 @@ const PokemonCard = ({ name, order, types, sprite }: PokemonData) => {
         <PokeballSvg />
         <Box component="img" src={sprite} />
       </Box>
+
       <Box sx={styles.typesBox}>
         <Typography sx={styles.typeName} variant="caption">
           {capitalizeFirstLetter(types.type1)}

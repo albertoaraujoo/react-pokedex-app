@@ -1,30 +1,60 @@
 export type PokemonData = {
   name: string;
+  url: string;
   order: number;
   types: {
     type1: string;
     type2: string;
   };
   sprite: string;
+  details: {
+    order: number;
+    types: {
+      type1: string;
+      type2: string;
+    };
+    sprite: string;
+  };
 };
 
-export default async function PokeDataFetching() {
-  const pokeDataArray: PokemonData[] = [];
+export const PokeDataFetching = async (
+  offset: number = 0,
+  limit: number = 10
+): Promise<PokemonData[]> => {
+  const url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
 
-  for (let i = 1; i < 152; i++) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`);
+  try {
+    const res = await fetch(url);
     const data = await res.json();
 
-    pokeDataArray.push({
-      name: data.name,
-      order: data.order,
-      types: {
-        type1: data.types[0]?.type?.name || null,
-        type2: data.types.length > 1 ? data.types[1].type.name : "",
-      },
-      sprite: data.sprites.versions["generation-vi"]["x-y"].front_default,
-    });
-  }
+    if (!data.results) {
+      return [];
+    }
 
-  return { pokeDataArray };
-}
+    const fullData = await Promise.all(
+      data.results.map(async (pokemon: PokemonData) => {
+        const res = await fetch(pokemon.url);
+        const fullPokemonData = await res.json();
+
+        return {
+          name: fullPokemonData.name,
+          order: fullPokemonData.order,
+          types: {
+            type1: fullPokemonData.types[0]?.type?.name || null,
+            type2:
+              fullPokemonData.types.length > 1
+                ? fullPokemonData.types[1].type.name
+                : "",
+          },
+          sprite:
+            fullPokemonData.sprites.versions["generation-vi"]["x-y"]
+              .front_default,
+        };
+      })
+    );
+    return fullData;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
