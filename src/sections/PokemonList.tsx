@@ -1,10 +1,11 @@
 "use client";
 import { PokeDataFetching } from "@/Hooks/usePokeDataFechting";
-import { PokemonData } from "../interfaces/interfaces";
+import PokemonCard from "@/components/pokemonCard";
+import { PokemonData } from "@/interfaces/interfaces";
+
 import { Container } from "@mui/material";
 
 import { useState, useEffect } from "react";
-import PokemonCard from "../components/pokemonCard";
 
 const PokemonList = () => {
   const [offset, setOffset] = useState(0);
@@ -33,6 +34,7 @@ const PokemonList = () => {
           order={pokemon.order}
           types={pokemon.types}
           sprite={pokemon.sprite}
+          animatedSprite={pokemon.animatedSprite}
         />
       ))}
 

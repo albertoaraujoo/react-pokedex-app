@@ -1,13 +1,21 @@
 import { Box, Typography } from "@mui/material";
+import { capitalizeFirstLetter } from "../utils/textFormater";
 import PokeballSvg from "./PokeballSvg";
 import TypesBox from "./typesBox";
-import { PokemonData, PokemonTypes } from "../interfaces/interfaces";
-import { capitalizeFirstLetter } from "../utils/textFormater";
+import { PokemonData } from "@/interfaces/interfaces";
+import { useState } from "react";
 
-const PokemonCard = (
-  { name, order, sprite }: PokemonData,
-  { type1, type2 }: PokemonTypes
-) => {
+const PokemonCard = ({
+  name,
+  order,
+  sprite,
+  types,
+  animatedSprite,
+}: PokemonData) => {
+  const [image, setImage] = useState(sprite);
+
+  const [onMove, setOnMove] = useState(false);
+
   return (
     <Box sx={styles.card}>
       <Box sx={styles.nameAndNumber}>
@@ -21,10 +29,22 @@ const PokemonCard = (
       <Box sx={styles.cardSprite}>
         <PokeballSvg />
         <Box>
-          <Box sx={styles.sprite} component="img" src={sprite} />
+          <Box
+            sx={styles.sprite(onMove)}
+            component="img"
+            src={image}
+            onMouseOver={() => {
+              setImage(animatedSprite);
+              setOnMove(true);
+            }}
+            onMouseLeave={() => {
+              setImage(sprite);
+              setOnMove(false);
+            }}
+          />
         </Box>
       </Box>
-      <TypesBox type1={type1} type2={type2} />
+      <TypesBox type1={types.type1} type2={types.type2} />
     </Box>
   );
 };
@@ -68,12 +88,13 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     zIndex: 2,
+    transition: "transform 0.5s ease-in-out",
   },
 
-  sprite: {
-    width: "120px",
-    height: "120px",
-  },
+  sprite: (onMove: boolean) => ({
+    width: onMove ? "90px" : "120px",
+    height: onMove ? "90px" : "120px",
+  }),
 
   typeName: {
     boxShadow: "0px 2px 8px 0px #00000022",

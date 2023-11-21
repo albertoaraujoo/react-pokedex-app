@@ -1,8 +1,8 @@
-import { PokemonData } from "@/app/interfaces/interfaces";
+import { PokemonData } from "@/interfaces/interfaces";
 
 export const PokeDataFetching = async (
   offset: number = 0,
-  limit: number = 10
+  limit: number = 20
 ): Promise<PokemonData[]> => {
   const url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
 
@@ -21,7 +21,7 @@ export const PokeDataFetching = async (
 
         return {
           name: fullPokemonData.name,
-          order: fullPokemonData.order,
+          order: fullPokemonData.id,
           types: {
             type1: fullPokemonData.types[0]?.type?.name || null,
             type2:
@@ -30,9 +30,10 @@ export const PokeDataFetching = async (
                 : "",
           },
           sprite:
-            // fullPokemonData.sprites.versions["generation-vi"]["x-y"]
-            //   .front_default,
             fullPokemonData.sprites.other["official-artwork"].front_default,
+          animatedSprite:
+            fullPokemonData.sprites.versions["generation-v"]["black-white"]
+              .animated.front_default,
         };
       })
     );

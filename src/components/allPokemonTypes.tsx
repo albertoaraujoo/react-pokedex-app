@@ -4,10 +4,10 @@ export const allPokemonTypes = [
     color: "#62B957",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -23,10 +23,10 @@ export const allPokemonTypes = [
     color: "#A552CC",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -42,10 +42,10 @@ export const allPokemonTypes = [
     color: "#4A90DA",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -61,10 +61,10 @@ export const allPokemonTypes = [
     color: "#0F6AC0",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -76,14 +76,14 @@ export const allPokemonTypes = [
     ),
   },
   {
-    name: "eletric",
+    name: "electric",
     color: "#EAB308",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -99,10 +99,10 @@ export const allPokemonTypes = [
     color: "#ED6EC7",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -118,10 +118,10 @@ export const allPokemonTypes = [
     color: "#D04164",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -137,10 +137,10 @@ export const allPokemonTypes = [
     color: "#FD7D24",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -156,10 +156,10 @@ export const allPokemonTypes = [
     color: "#748FC9",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -175,10 +175,10 @@ export const allPokemonTypes = [
     color: "#556AAE",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -194,10 +194,10 @@ export const allPokemonTypes = [
     color: "#DD7748",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -213,10 +213,10 @@ export const allPokemonTypes = [
     color: "#61CEC0",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M12.1278 4.65036L5.91863 1.5752L6.10643 8.4483L11.969 11.3518L12.1278 4.65036Z" />
@@ -233,10 +233,10 @@ export const allPokemonTypes = [
     color: "#9DA0AA",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -252,10 +252,10 @@ export const allPokemonTypes = [
     color: "#EA5D60",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -271,10 +271,10 @@ export const allPokemonTypes = [
     color: "#BAAB82",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -290,10 +290,10 @@ export const allPokemonTypes = [
     color: "#417D9A",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -309,10 +309,10 @@ export const allPokemonTypes = [
     color: "#8CB230",
     svg: (
       <svg
-        width="22"
-        height="26"
+        width="17"
+        height="17"
         viewBox="0 0 22 26"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -328,10 +328,10 @@ export const allPokemonTypes = [
     color: "#58575F",
     svg: (
       <svg
-        width="25"
-        height="25"
+        width="17"
+        height="17"
         viewBox="0 0 25 25"
-        fill="#17171B"
+        fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
