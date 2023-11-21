@@ -1,12 +1,12 @@
 "use client";
-import { PokeDataFetching, PokemonData } from "@/Hooks/pokeDataFechting";
+import { PokeDataFetching, PokemonData } from "@/Hooks/usePokeDataFechting";
 import { Container } from "@mui/material";
 import PokemonCard from "../components/pokemonCard";
 import { useState, useEffect } from "react";
 
 const PokemonList = () => {
   const [offset, setOffset] = useState(0);
-  const limit = 10;
+  const limit = 20;
   const [pokeList, setPokeList] = useState<PokemonData[]>([]);
 
   useEffect(() => {
@@ -47,13 +47,13 @@ const styles = {
   container: {
     display: "flex",
     justifyContent: "center",
-    // boxSizing: "border-box",
+    boxSizing: "border-box",
     alignItems: "center",
     gap: "30px",
     width: "90%",
     overflow: "auto",
     flexWrap: "wrap",
-
+    minHeight: "100dvh",
     marginTop: "80px",
     marginBottom: "80px",
   },
@@ -87,26 +87,5 @@ const styles = {
     backgroundColor: "#FAD4C0",
     border: "1px solid #000",
     boxShadow: "0px 2px 8px 0px #00000022",
-  },
-  cardSprite: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 2,
-  },
-  typesBox: {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "5px",
-    gap: "6px",
-  },
-  typeName: {
-    boxShadow: "0px 2px 8px 0px #00000022",
-    backgroundColor: "#74BEB5",
-    borderRadius: "8px",
-    padding: "2px 7px 2px 7px",
-    fontSize: "12px",
-    fontWeight: 700,
-    color: "#FFFFFF",
   },
 };

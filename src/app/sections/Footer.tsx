@@ -1,12 +1,12 @@
-import { AppBar } from "@mui/material";
+import { Toolbar, Box } from "@mui/material";
 
 import React from "react";
 
 const Footer = () => {
   return (
-    <AppBar color="primary" sx={styles.footer}>
+    <Box color="primary" sx={styles.footer}>
       Footer
-    </AppBar>
+    </Box>
   );
 };
 

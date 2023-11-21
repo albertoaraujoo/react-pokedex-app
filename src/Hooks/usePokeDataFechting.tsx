@@ -47,8 +47,9 @@ export const PokeDataFetching = async (
                 : "",
           },
           sprite:
-            fullPokemonData.sprites.versions["generation-vi"]["x-y"]
-              .front_default,
+            // fullPokemonData.sprites.versions["generation-vi"]["x-y"]
+            //   .front_default,
+            fullPokemonData.sprites.other["official-artwork"].front_default,
         };
       })
     );

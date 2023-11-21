@@ -5,6 +5,8 @@ import Navbar from "./sections/NavBar";
 import Footer from "./sections/Footer";
 import Container from "@mui/material/Container";
 
+import "./page.module.css";
+
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
