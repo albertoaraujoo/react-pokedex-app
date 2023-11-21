@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export type pokemonTypeProps = {
   width: number;
   height: number;
@@ -8,7 +6,7 @@ export type pokemonTypeProps = {
 
 export type TypeObject = {
   name: string;
-  svg: ReactElement;
+  svg: SVGRectElement;
 };
 
 export type HandleTypesProps = {
