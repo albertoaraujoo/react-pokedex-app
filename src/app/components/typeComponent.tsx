@@ -4,8 +4,8 @@ type TesteProps = {
   children: ReactNode;
 };
 
-const TipoComponent: React.FC<TesteProps> = ({ children }) => {
+const TypeComponent: React.FC<TesteProps> = ({ children }) => {
   return <div>{children}</div>;
 };
 
-export default TipoComponent;
+export default TypeComponent;

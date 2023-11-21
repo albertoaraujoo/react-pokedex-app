@@ -1,21 +1,4 @@
-export type PokemonData = {
-  name: string;
-  url: string;
-  order: number;
-  types: {
-    type1: string;
-    type2: string;
-  };
-  sprite: string;
-  details: {
-    order: number;
-    types: {
-      type1: string;
-      type2: string;
-    };
-    sprite: string;
-  };
-};
+import { PokemonData } from "@/app/interfaces/interfaces";
 
 export const PokeDataFetching = async (
   offset: number = 0,

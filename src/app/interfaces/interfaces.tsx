@@ -1,15 +1,12 @@
-export type pokemonTypeProps = {
-  width: number;
-  height: number;
-  fill: string;
+export type PokemonTypes = {
+  type1: string;
+  type2?: string;
 };
 
-export type TypeObject = {
+export type PokemonData = {
   name: string;
-  svg: SVGRectElement;
-};
-
-export type HandleTypesProps = {
-  type: string;
-  list: TypeObject[];
+  url: string;
+  order: number;
+  types: PokemonTypes;
+  sprite: string;
 };

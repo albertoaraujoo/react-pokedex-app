@@ -1,12 +1,13 @@
 import { Box, Typography } from "@mui/material";
-import { capitalizeFirstLetter } from "../utils/textFormater";
-import { PokemonData } from "@/Hooks/usePokeDataFechting";
 import PokeballSvg from "./PokeballSvg";
-import TipoComponent from "./tipoComponent";
-import { typesFodas } from "./pokemonTypesIcons/tipos";
-import { handleType } from "@/Hooks/useHandleTypes";
+import TypesBox from "./typesBox";
+import { PokemonData, PokemonTypes } from "../interfaces/interfaces";
+import { capitalizeFirstLetter } from "../utils/textFormater";
 
-const PokemonCard = ({ name, order, types, sprite }: PokemonData) => {
+const PokemonCard = (
+  { name, order, sprite }: PokemonData,
+  { type1, type2 }: PokemonTypes
+) => {
   return (
     <Box sx={styles.card}>
       <Box sx={styles.nameAndNumber}>
@@ -23,28 +24,7 @@ const PokemonCard = ({ name, order, types, sprite }: PokemonData) => {
           <Box sx={styles.sprite} component="img" src={sprite} />
         </Box>
       </Box>
-
-      <Box sx={styles.typesBox}>
-        {/* <Typography sx={styles.typeName} variant="caption">
-          {capitalizeFirstLetter(types.type1)}
-        </Typography>
-
-        {types.type2 ? (
-          <Typography sx={styles.typeName} variant="caption">
-            {capitalizeFirstLetter(types.type2)}
-          </Typography>
-        ) : null} */}
-        {/* <TipoComponent>{findType({type.type01})}</TipoComponent>
-        <TipoComponent>
-          {typesFodas.{type.type01}}
-        </TipoComponent> */}
-        <TipoComponent>
-          {handleType({ type: `${types.type1}`, list: typesFodas })}
-        </TipoComponent>
-        <TipoComponent>
-          {handleType({ type: `${types.type2}`, list: typesFodas })}
-        </TipoComponent>
-      </Box>
+      <TypesBox type1={type1} type2={type2} />
     </Box>
   );
 };
@@ -94,12 +74,7 @@ const styles = {
     width: "120px",
     height: "120px",
   },
-  typesBox: {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "5px",
-    gap: "6px",
-  },
+
   typeName: {
     boxShadow: "0px 2px 8px 0px #00000022",
     backgroundColor: "#74BEB5",
