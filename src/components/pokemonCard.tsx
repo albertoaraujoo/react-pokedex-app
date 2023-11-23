@@ -4,6 +4,7 @@ import PokeballSvg from "./PokeballSvg";
 import TypesBox from "./typesBox";
 import { PokemonData } from "@/interfaces/interfaces";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const PokemonCard = ({
   name,
@@ -12,6 +13,8 @@ const PokemonCard = ({
   types,
   animatedSprite,
 }: PokemonData) => {
+  const router = useRouter();
+
   const [image, setImage] = useState(sprite);
 
   const [onMove, setOnMove] = useState(false);
@@ -40,6 +43,9 @@ const PokemonCard = ({
             onMouseLeave={() => {
               setImage(sprite);
               setOnMove(false);
+            }}
+            onClick={() => {
+              router.push(`/pokemon/${order}`);
             }}
           />
         </Box>

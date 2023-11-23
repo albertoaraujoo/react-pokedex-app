@@ -1,5 +1,5 @@
 "use client";
-import { PokeDataFetching } from "@/Hooks/usePokeDataFechting";
+import { PokeDataFetching } from "@/Hooks/useDataFetching";
 import PokemonCard from "@/components/pokemonCard";
 import { PokemonData } from "@/interfaces/interfaces";
 

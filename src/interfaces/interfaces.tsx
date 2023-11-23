@@ -27,3 +27,7 @@ export type PokemonData = {
   sprite: string;
   animatedSprite: string;
 };
+
+export type IdProp = {
+  id: string;
+};

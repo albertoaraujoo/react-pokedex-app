@@ -1,24 +1,6 @@
-import { Box } from "@mui/material";
+import PokemonStats from "@/sections/PokemonStats";
 
-export default function About({ params }: { params: { id: string } }) {
+export default function Pokemon({ params }: { params: { id: string } }) {
   const id = params.id;
-
-  return (
-    <Box>
-      <Box sx={styles.teste}>
-        {" "}
-        <h1>ID mesmo: {id}</h1>pokemon
-      </Box>
-      <h1>ID: {id}</h1>
-    </Box>
-  );
+  return <PokemonStats id={id} />;
 }
-
-const styles = {
-  teste: {
-    marginTop: "50px",
-    height: "100vh",
-    backgroundColor: "red",
-    color: "white",
-  },
-};
