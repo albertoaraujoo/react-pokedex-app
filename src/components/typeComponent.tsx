@@ -1,9 +1,14 @@
 import { Box } from "@mui/material";
 import { TypeComponentProps } from "@/interfaces/interfaces";
 
-const TypeComponent = ({ children, bgColor }: TypeComponentProps) => {
+const TypeComponent = ({
+  children,
+  bgColor,
+  height,
+  width,
+}: TypeComponentProps) => {
   return (
-    <Box sx={styles.typeComponent(bgColor)}>
+    <Box sx={styles.typeComponent(bgColor, width, height)}>
       <Box sx={styles.icon}>{children}</Box>
     </Box>
   );
@@ -12,10 +17,14 @@ const TypeComponent = ({ children, bgColor }: TypeComponentProps) => {
 export default TypeComponent;
 
 const styles = {
-  typeComponent: (bgColor: string) => ({
+  typeComponent: (bgColor: string, width: string, height: string) => ({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: `${bgColor}`,
     borderRadius: "5px",
-    width: "30%",
+    width: { width },
+    height: { height },
     padding: "3px 10px",
     color: "#FFFFFF",
     fontSize: "12px",

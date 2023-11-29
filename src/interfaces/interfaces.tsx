@@ -1,6 +1,8 @@
 export type PokemonTypes = {
   type1: string;
   type2?: string;
+  width: string;
+  height?: string;
 };
 
 export type TypeObject = {
@@ -17,6 +19,8 @@ export type HandleTypesProps = {
 export type TypeComponentProps = {
   children: React.ReactNode;
   bgColor?: any;
+  width: string;
+  height: string;
 };
 
 export type PokemonData = {
@@ -30,4 +34,9 @@ export type PokemonData = {
 
 export type IdProp = {
   id: string;
+};
+
+export type pokeballDimensions = {
+  width: string;
+  height: string;
 };

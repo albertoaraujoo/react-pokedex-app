@@ -59,6 +59,16 @@ export const PokemonSoloStats = async (id: string) => {
   const secondEvolution =
     evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species.name;
 
+  // console.log({
+  //   pokemonData: pokemonData,
+  //   speciesData: speciesData,
+  //   evolutionData: {
+  //     noEvolutionYet: noEvolutionYet,
+  //     firstEvolution: firstEvolution,
+  //     secondEvolution: secondEvolution,
+  //   },
+  // });
+
   return {
     pokemonData: pokemonData,
     speciesData: speciesData,

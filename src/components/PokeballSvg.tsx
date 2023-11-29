@@ -1,10 +1,12 @@
-const PokeballSvg = () => {
+import { pokeballDimensions } from "@/interfaces/interfaces";
+
+const PokeballSvg = ({ width, height }: pokeballDimensions) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="icon icon-tabler icon-tabler-pokeball"
-      width="150"
-      height="150"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"

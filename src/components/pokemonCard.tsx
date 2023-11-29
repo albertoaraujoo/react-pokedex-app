@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { capitalizeFirstLetter } from "../utils/textFormater";
 import PokeballSvg from "./PokeballSvg";
 import TypesBox from "./typesBox";
-import { PokemonData } from "@/interfaces/interfaces";
+import { PokemonData, TypesComponentDimensions } from "@/interfaces/interfaces";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -30,7 +30,7 @@ const PokemonCard = ({
         </Typography>
       </Box>
       <Box sx={styles.cardSprite}>
-        <PokeballSvg />
+        <PokeballSvg width="150" height="150" />
         <Box>
           <Box
             sx={styles.sprite(onMove)}
@@ -50,7 +50,7 @@ const PokemonCard = ({
           />
         </Box>
       </Box>
-      <TypesBox type1={types.type1} type2={types.type2} />
+      <TypesBox width="35%" height="" type1={types.type1} type2={types.type2} />
     </Box>
   );
 };
