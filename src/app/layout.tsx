@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "../sections/NavBar";
 import Footer from "../sections/Footer";
@@ -7,8 +7,8 @@ import Container from "@mui/material/Container";
 
 import "./page.module.css";
 
-const roboto = Roboto({
-  weight: "400",
+const monteserrat = Montserrat({
+  weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Container maxWidth="lg">
-        <body className={roboto.className}>
+        <body className={monteserrat.className}>
           <Navbar />
           {children}
           <Footer />

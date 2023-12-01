@@ -28,7 +28,6 @@ const styles = {
     padding: "3px 10px",
     color: "#FFFFFF",
     fontSize: "12px",
-    fontWeight: "bold",
     textTransform: "capitalize",
   }),
 

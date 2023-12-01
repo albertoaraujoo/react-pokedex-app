@@ -2,9 +2,7 @@
 import { PokeDataFetching } from "@/Hooks/useDataFetching";
 import PokemonCard from "@/components/pokemonCard";
 import { PokemonData } from "@/interfaces/interfaces";
-
 import { Container } from "@mui/material";
-
 import { useState, useEffect } from "react";
 
 const PokemonList = () => {
@@ -59,36 +57,5 @@ const styles = {
     minHeight: "100dvh",
     marginTop: "80px",
     marginBottom: "80px",
-  },
-  nameAndNumber: {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "#74BEB5",
-    width: "100%",
-    alignSelf: "center",
-    color: "#FFFFFF",
-  },
-  name: {
-    fontSize: "15px",
-    fontWeight: "700",
-  },
-  number: {
-    fontSize: "15px",
-
-    fontFamily: "'Lexend', sans-serif",
-    fontWeight: "900",
-  },
-  card: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "space-between",
-    width: "150px",
-    minWidth: "150px",
-    height: "200px",
-    backgroundColor: "#FAD4C0",
-    border: "1px solid #000",
-    boxShadow: "0px 2px 8px 0px #00000022",
   },
 };

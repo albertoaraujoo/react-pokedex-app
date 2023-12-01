@@ -37,7 +37,7 @@ const PokemonCard = ({
             component="img"
             src={image}
             onMouseOver={() => {
-              setImage(animatedSprite);
+              setImage(animatedSprite ? animatedSprite : sprite);
               setOnMove(true);
             }}
             onMouseLeave={() => {
@@ -50,7 +50,14 @@ const PokemonCard = ({
           />
         </Box>
       </Box>
-      <TypesBox width="35%" height="" type1={types.type1} type2={types.type2} />
+      <TypesBox
+        iconHeight="17px"
+        iconWidth="17px"
+        width="35%"
+        height=""
+        type1={types.type1}
+        type2={types.type2}
+      />
     </Box>
   );
 };
@@ -69,14 +76,14 @@ const styles = {
     borderBottom: "#5E686E solid 1px",
   },
   name: {
-    fontSize: "15px",
+    fontSize: "14px",
     fontWeight: "700",
+    fontFamily: "var(--font-monteserrat)",
   },
   number: {
-    fontSize: "15px",
-
-    fontFamily: "'Lexend', sans-serif",
+    fontSize: "14px",
     fontWeight: "900",
+    color: "#707070",
   },
   card: {
     display: "flex",

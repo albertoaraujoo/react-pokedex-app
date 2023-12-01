@@ -2,7 +2,9 @@ export type PokemonTypes = {
   type1: string;
   type2?: string;
   width: string;
-  height?: string;
+  height: string;
+  iconWidth: string;
+  iconHeight: string;
 };
 
 export type TypeObject = {
@@ -39,4 +41,10 @@ export type IdProp = {
 export type pokeballDimensions = {
   width: string;
   height: string;
+};
+
+export type PokemonTypeBox = {
+  children: React.ReactNode;
+  iconWidth: string;
+  iconHeight: string;
 };

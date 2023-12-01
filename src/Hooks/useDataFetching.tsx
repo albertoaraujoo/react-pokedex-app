@@ -31,9 +31,12 @@ export const PokeDataFetching = async (
           },
           sprite:
             fullPokemonData.sprites.other["official-artwork"].front_default,
-          animatedSprite:
-            fullPokemonData.sprites.versions["generation-v"]["black-white"]
-              .animated.front_default,
+          animatedSprite: fullPokemonData.sprites.versions["generation-v"][
+            "black-white"
+          ].animated.front_default
+            ? fullPokemonData.sprites.versions["generation-v"]["black-white"]
+                .animated.front_default
+            : null,
         };
       })
     );
