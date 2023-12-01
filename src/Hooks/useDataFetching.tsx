@@ -1,4 +1,5 @@
 import { PokemonData } from "@/interfaces/interfaces";
+import { type } from "os";
 
 export const PokeDataFetching = async (
   offset: number = 0,
@@ -70,6 +71,10 @@ export const PokemonSoloStats = async (id: string) => {
   //     firstEvolution: firstEvolution,
   //     secondEvolution: secondEvolution,
   //   },
+  //   types: {
+  //     type1: pokemonData.types[0]?.type?.name || null,
+  //     type2: pokemonData.types.length > 1 ? pokemonData.types[1].type.name : "",
+  //   },
   // });
 
   return {
@@ -79,6 +84,10 @@ export const PokemonSoloStats = async (id: string) => {
       noEvolutionYet: noEvolutionYet,
       firstEvolution: firstEvolution,
       secondEvolution: secondEvolution,
+    },
+    types: {
+      type1: pokemonData.types[0]?.type?.name || null,
+      type2: pokemonData.types.length > 1 ? pokemonData.types[1].type.name : "",
     },
   };
 };

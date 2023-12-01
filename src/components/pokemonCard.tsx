@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { capitalizeFirstLetter } from "../utils/textFormater";
 import PokeballSvg from "./PokeballSvg";
 import TypesBox from "./typesBox";
-import { PokemonData, TypesComponentDimensions } from "@/interfaces/interfaces";
+import { PokemonData } from "@/interfaces/interfaces";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
