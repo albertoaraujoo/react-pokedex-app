@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { Box, Typography } from "@mui/material";
 import { PokemonSoloStats } from "@/Hooks/useDataFetching";
 import { capitalizeFirstLetter } from "@/utils/textFormater";
