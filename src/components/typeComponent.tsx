@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
 import { TypeComponentProps } from "@/interfaces/interfaces";
 
 const TypeComponent = ({
@@ -6,11 +6,14 @@ const TypeComponent = ({
   bgColor,
   height,
   width,
+  title,
 }: TypeComponentProps) => {
   return (
-    <Box sx={styles.typeComponent(bgColor, width, height)}>
-      <Box sx={styles.icon}>{children}</Box>
-    </Box>
+    <Tooltip title={title}>
+      <Box sx={styles.typeComponent(bgColor, width, height)}>
+        <Box sx={styles.icon}>{children}</Box>
+      </Box>
+    </Tooltip>
   );
 };
 

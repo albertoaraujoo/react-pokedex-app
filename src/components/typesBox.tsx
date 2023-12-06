@@ -2,9 +2,10 @@
 import { Box } from "@mui/material";
 import { handleType, handleColor } from "@/Hooks/useGetColorAndType";
 import { PokemonTypes } from "../interfaces/interfaces";
-import TypeComponent from "./typeComponent";
-import { allPokemonTypes } from "./allPokemonTypes";
-import PokemonTypeBox from "./pokemonTypeBox";
+import TypeComponent from "./TypeComponent";
+import { allPokemonTypes } from "./AllPokemonTypes";
+import PokemonTypeBox from "./PokemonTypeBox";
+import { capitalizeFirstLetter } from "@/utils/textFormater";
 
 const TypesBox = ({
   type1,
@@ -17,6 +18,7 @@ const TypesBox = ({
   return (
     <Box sx={styles.typesBox}>
       <TypeComponent
+        title={capitalizeFirstLetter(type1)}
         width={width}
         height={height}
         bgColor={handleColor({ type: `${type1}`, list: allPokemonTypes })}
@@ -27,6 +29,7 @@ const TypesBox = ({
       </TypeComponent>
       {type2 ? (
         <TypeComponent
+          title={capitalizeFirstLetter(type2)}
           width={width}
           height={height}
           bgColor={handleColor({ type: `${type2}`, list: allPokemonTypes })}

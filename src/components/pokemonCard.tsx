@@ -1,10 +1,12 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import { capitalizeFirstLetter } from "../utils/textFormater";
 import PokeballSvg from "./PokeballSvg";
-import TypesBox from "./typesBox";
+
 import { PokemonData } from "@/interfaces/interfaces";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import TypesBox from "./TypesBox";
 
 const PokemonCard = ({
   name,
@@ -55,8 +57,8 @@ const PokemonCard = ({
         iconWidth="17px"
         width="35%"
         height=""
-        type1={types.type1}
-        type2={types.type2}
+        type1={types?.type1}
+        type2={types?.type2}
       />
     </Box>
   );

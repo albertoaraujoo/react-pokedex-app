@@ -1,6 +1,6 @@
 export type PokemonTypes = {
   type1: string;
-  type2?: string;
+  type2: string;
   width: string;
   height: string;
   iconWidth: string;
@@ -23,15 +23,21 @@ export type TypeComponentProps = {
   bgColor?: any;
   width: string;
   height: string;
+  title: string;
 };
 
 export type PokemonData = {
+  fetch?: Promise<PokemonData>;
   name: string;
   url: string;
   order: number;
   types: PokemonTypes;
   sprite: string;
   animatedSprite: string;
+};
+
+export type StatsTitle = {
+  text: string;
 };
 
 export type IdProp = {
@@ -47,4 +53,18 @@ export type PokemonTypeBox = {
   children: React.ReactNode;
   iconWidth: string;
   iconHeight: string;
+};
+
+export type StatsBarProps = {
+  stat: string;
+  value: number;
+};
+
+export type Stat = {
+  name: string;
+};
+
+export type BaseStat = {
+  stat: Stat;
+  base_stat: number;
 };

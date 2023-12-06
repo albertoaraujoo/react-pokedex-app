@@ -1,8 +1,10 @@
 // "use client";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { IdProp } from "@/interfaces/interfaces";
-import PokemonBigSoloCard from "@/components/pokemonBigSoloCard";
 import WeaknessAndResistances from "@/components/WeaknessAndResistances";
+import Evolutions from "@/components/Evolutions";
+import PokemonBigSoloCard from "@/components/pokemonBigSoloCard";
+import BaseStats from "@/components/BaseStats";
 
 const PokemonStats = async ({ id }: IdProp) => {
   return (
@@ -10,9 +12,9 @@ const PokemonStats = async ({ id }: IdProp) => {
       <PokemonBigSoloCard id={id} />
       <Box sx={styles.infos}>
         <WeaknessAndResistances id={id} />
-        <Box sx={styles.baseData}></Box>
-        <Box sx={styles.evolution}></Box>
-        <Box sx={styles.stats}></Box>
+        <Evolutions id={id} />
+        <BaseStats id={id} />
+        <Box sx={styles.evolution}>esfdsf</Box>
       </Box>
     </Container>
   );
@@ -22,34 +24,25 @@ export default PokemonStats;
 
 const styles = {
   container: {
-    marginTop: "50px",
+    marginTop: "40px",
     display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     height: "100dvh",
-    color: "white",
+    color: "#FFFFFF",
   },
   infos: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    flexDirection: "column",
     width: "100%",
-    height: "50%",
-    backgroundColor: "blue",
+    height: "80%",
   },
-  baseData: {
-    width: "100%",
-    height: "50%",
-    backgroundColor: "green",
-  },
-  WeaknessesAndResistances: {
-    width: "100%",
-    height: "50%",
-    backgroundColor: "yellow",
-  },
+
   evolution: {
-    width: "100%",
-    height: "50%",
+    width: "90%",
+    height: "160px",
     backgroundColor: "pink",
-  },
-  stats: {
-    width: "100%",
-    height: "50%",
-    backgroundColor: "purple",
   },
 };

@@ -1,10 +1,11 @@
-// import { handleResitancesAndWeaknesses } from "@/Hooks/useResistancesAndWeaknesses";
+// "use client";
+// import { PokemonSoloStats } from "@/Hooks/useDataFetching";
 import PokemonList from "@/sections/PokemonList";
 
 export default async function Home() {
-  // const types = await handleResitancesAndWeaknesses("grass", "poison");
+  // const pokemon = await PokemonSoloStats("1");
 
-  // await console.log(types);
+  // await console.log(pokemon);
 
   return <PokemonList />;
 }

@@ -1,6 +1,6 @@
 "use client";
 import { PokeDataFetching } from "@/Hooks/useDataFetching";
-import PokemonCard from "@/components/pokemonCard";
+import PokemonCard from "@/components/PokemonCard";
 import { PokemonData } from "@/interfaces/interfaces";
 import { Container } from "@mui/material";
 import { useState, useEffect } from "react";
