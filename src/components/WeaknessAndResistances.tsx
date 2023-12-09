@@ -1,17 +1,17 @@
-import { IdProp } from "@/interfaces/interfaces";
 import TypeComponent from "./TypeComponent";
 import { handleResitancesAndWeaknesses } from "@/Hooks/useResistancesAndWeaknesses";
-import { PokemonSoloStats } from "@/Hooks/useDataFetching";
 import PokemonTypeBox from "./PokemonTypeBox";
 import { handleColor, handleType } from "@/Hooks/useGetColorAndType";
 import { allPokemonTypes } from "./AllPokemonTypes";
 import { Box, Container, Divider } from "@mui/material";
 import { capitalizeFirstLetter } from "@/utils/textFormater";
 import SoloStatsTitle from "./SoloStatsTitle";
+import { WeaknessAndResistancesProps } from "@/interfaces/interfaces";
 
-const WeaknessAndResistances = async ({ id }: IdProp) => {
-  const pokemon = await PokemonSoloStats(id);
-
+const WeaknessAndResistances = async ({
+  pokemon,
+  color,
+}: WeaknessAndResistancesProps) => {
   const data = await handleResitancesAndWeaknesses(
     `${pokemon.pokemonData.types[0]?.type?.name}`,
     `${
@@ -22,7 +22,7 @@ const WeaknessAndResistances = async ({ id }: IdProp) => {
   );
 
   return (
-    <Container sx={styles.container}>
+    <Container sx={styles.container(color)}>
       <Box sx={styles.resistancesAndWeakness}>
         <SoloStatsTitle text="Resistances" />
         <Box sx={styles.resistanceAndWeaknessBox}>
@@ -69,7 +69,7 @@ const WeaknessAndResistances = async ({ id }: IdProp) => {
 export default WeaknessAndResistances;
 
 const styles = {
-  container: {
+  container: (color: WeaknessAndResistancesProps) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -78,7 +78,8 @@ const styles = {
     height: "160px",
     gap: "15px",
     backgroundColor: "#2F3437",
-  },
+    borderTop: `5px solid ${color}`,
+  }),
   resistancesAndWeakness: {
     display: "flex",
     flexDirection: "column",

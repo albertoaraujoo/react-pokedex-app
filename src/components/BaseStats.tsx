@@ -1,14 +1,13 @@
 import { Container } from "@mui/material";
 import React from "react";
-import { PokemonSoloStats } from "@/Hooks/useDataFetching";
-import { BaseStat, IdProp } from "@/interfaces/interfaces";
+import { BaseStat, WeaknessAndResistancesProps } from "@/interfaces/interfaces";
 import StatsBar from "./StatsBar";
+import SoloStatsTitle from "./SoloStatsTitle";
 
-const BaseStats = async ({ id }: IdProp) => {
-  const pokemon = await PokemonSoloStats(id);
-
+const BaseStats = async ({ pokemon, color }: WeaknessAndResistancesProps) => {
   return (
-    <Container sx={styles.container}>
+    <Container sx={styles.container(color)}>
+      <SoloStatsTitle text="Base Stats" />
       {pokemon.pokemonData?.stats.map((thisStat: BaseStat) => (
         <StatsBar
           key={thisStat.stat.name}
@@ -23,13 +22,14 @@ const BaseStats = async ({ id }: IdProp) => {
 export default BaseStats;
 
 const styles = {
-  container: {
+  container: (color: WeaknessAndResistancesProps) => ({
     width: "90%",
-    height: "200px",
+    height: "210px",
     backgroundColor: "#2F3437",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-  },
+    borderTop: `5px solid ${color}`,
+  }),
 };

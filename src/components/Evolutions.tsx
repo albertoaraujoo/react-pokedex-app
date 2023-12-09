@@ -1,47 +1,20 @@
-"use client";
-import { useState, useEffect } from "react";
-import { PokemonSoloStats } from "@/Hooks/useDataFetching";
-import { IdProp, PokemonData } from "@/interfaces/interfaces";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import PokemonCard from "./PokemonCard";
 import SoloStatsTitle from "./SoloStatsTitle";
+import { useHandleEvolutionsCards } from "@/Hooks/useHandleEvolutionsCards";
+import {
+  PokemonData,
+  WeaknessAndResistancesProps,
+} from "@/interfaces/interfaces";
 
-const Evolutions = ({ id }: IdProp) => {
-  const [evolutionData, setEvolutionData] = useState<PokemonData[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const pokemon = await PokemonSoloStats(id);
-      console.log(pokemon);
-      const resolvedEvolutionData = (
-        await Promise.all(
-          pokemon.evolutionData.map(async (evolution) => {
-            const data = await evolution.fetch;
-            if (data) {
-              return {
-                name: data.name,
-                url: data.url,
-                order: data.order,
-                types: data.types,
-                sprite: data.sprite,
-                animatedSprite: data.animatedSprite,
-              };
-            }
-            return null;
-          })
-        )
-      ).filter((item) => item !== null);
-      setEvolutionData(resolvedEvolutionData as PokemonData[]);
-    };
-
-    fetchData();
-  }, [id]);
+const Evolutions = async ({ pokemon, color }: WeaknessAndResistancesProps) => {
+  const evolutionsData = await useHandleEvolutionsCards(pokemon);
 
   return (
-    <Container sx={styles.container}>
+    <Container sx={styles.container(color)}>
       <SoloStatsTitle text="Evolutions" />
       <Box sx={styles.cards}>
-        {evolutionData.map((evolution, index) => {
+        {evolutionsData.map((evolution: PokemonData, index: any) => {
           return (
             <PokemonCard
               animatedSprite={evolution.animatedSprite}
@@ -62,22 +35,23 @@ const Evolutions = ({ id }: IdProp) => {
 export default Evolutions;
 
 const styles = {
-  container: {
+  container: (color: WeaknessAndResistancesProps) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "column",
     paddingTop: "5px",
     width: "90%",
-    height: "210px",
+    height: "213px",
     backgroundColor: "#2F3437",
-  },
+    borderTop: `5px solid ${color}`,
+  }),
   cards: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     gap: "20px",
-    transform: "scale(0.8)",
+    transform: "scale(0.7)",
   },
 
   alert: {

@@ -68,3 +68,8 @@ export type BaseStat = {
   stat: Stat;
   base_stat: number;
 };
+
+export type WeaknessAndResistancesProps = {
+  pokemon: any;
+  color: any;
+};

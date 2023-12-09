@@ -16,5 +16,7 @@ const styles = {
     fontFamily: "var(--font-monteserrat)",
     fontSize: "15px",
     fontWeight: 700,
+    textAlign: "center",
+    lineHeight: "1.4",
   },
 };

@@ -1,20 +1,30 @@
-// "use client";
 import { Box, Container } from "@mui/material";
 import { IdProp } from "@/interfaces/interfaces";
+import { PokemonSoloStats } from "@/Hooks/useDataFetching";
 import WeaknessAndResistances from "@/components/WeaknessAndResistances";
 import Evolutions from "@/components/Evolutions";
-import PokemonBigSoloCard from "@/components/pokemonBigSoloCard";
 import BaseStats from "@/components/BaseStats";
+import PokemonBigSoloCard from "@/components/PokemonBigSoloCard";
+import { handleColor } from "@/Hooks/useGetColorAndType";
+import { allPokemonTypes } from "@/components/AllPokemonTypes";
+import Shiny from "@/components/Shiny";
 
 const PokemonStats = async ({ id }: IdProp) => {
+  const pokemon = await PokemonSoloStats(id);
+
+  const color = handleColor({
+    type: pokemon?.pokemonData.types[0].type.name,
+    list: allPokemonTypes,
+  });
+
   return (
     <Container sx={styles.container}>
-      <PokemonBigSoloCard id={id} />
+      <PokemonBigSoloCard pokemon={pokemon} />
       <Box sx={styles.infos}>
-        <WeaknessAndResistances id={id} />
-        <Evolutions id={id} />
-        <BaseStats id={id} />
-        <Box sx={styles.evolution}>esfdsf</Box>
+        <WeaknessAndResistances pokemon={pokemon} color={color} />
+        <Evolutions pokemon={pokemon} color={color} />
+        <BaseStats pokemon={pokemon} color={color} />
+        <Shiny pokemon={pokemon} color={color} />
       </Box>
     </Container>
   );
@@ -34,15 +44,10 @@ const styles = {
   infos: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
+    gap: "10px",
     flexDirection: "column",
     width: "100%",
     height: "80%",
-  },
-
-  evolution: {
-    width: "90%",
-    height: "160px",
-    backgroundColor: "pink",
   },
 };

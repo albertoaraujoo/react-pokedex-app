@@ -1,11 +1,9 @@
-"use client";
 import { Box } from "@mui/material";
 import { calculateProgress } from "@/utils/calculateProgress";
 import { getProgressBarColor } from "@/utils/getProgressBarColor";
 
 const ProgressBar = ({ value }: { value: number }) => {
   const rightValue = calculateProgress(value);
-
   const rightColor = getProgressBarColor(rightValue);
 
   return (
@@ -24,8 +22,10 @@ const styles = {
     width: "100%",
     height: "10px",
     backgroundColor: "transparent",
+    borderWidth: "1px 1px 1px 0",
+    borderStyle: "solid",
+    borderColor: "#45474A",
     borderRadius: "10px",
-    border: "solid 1px #000000",
   },
   progressBar: (rightValue: number, rightColor: string) => ({
     width: `${rightValue}%`,
