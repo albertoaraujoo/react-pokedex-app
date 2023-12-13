@@ -24,13 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Container maxWidth="lg">
-        <body className={monteserrat.className}>
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </Container>
+      <body className={monteserrat.className}>
+        <Navbar />
+        <Container maxWidth="lg">{children}</Container>
+        <Footer />
+      </body>
     </html>
   );
 }

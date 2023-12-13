@@ -23,8 +23,8 @@ export default BaseStats;
 
 const styles = {
   container: (color: WeaknessAndResistancesProps) => ({
-    width: "90%",
-    height: "220px",
+    width: { xs: "100%", md: "90%" },
+    minHeight: { xs: "230px", sm: "230px", md: "220px" },
     backgroundColor: "#2F3437",
     display: "flex",
     flexDirection: "column",

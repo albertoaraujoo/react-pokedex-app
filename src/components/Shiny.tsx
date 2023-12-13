@@ -31,7 +31,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "90%",
+    width: { xs: "100%", md: "90%" },
     height: "95px",
     backgroundColor: "#2F3437",
     borderBottomRightRadius: "10px",

@@ -74,8 +74,8 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: "90%",
-    height: "160px",
+    width: { xs: "100%", md: "90%" },
+    minHeight: "170px",
     gap: "15px",
     backgroundColor: "#2F3437",
     borderTop: `5px solid ${color}`,
@@ -86,6 +86,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     gap: "10px",
+    flexWrap: "wrap",
   },
 
   resistanceAndWeaknessBox: {

@@ -41,17 +41,18 @@ const styles = {
     alignItems: "center",
     flexDirection: "column",
     paddingTop: "5px",
-    width: "90%",
-    height: "213px",
+    width: { xs: "100%", md: "90%" },
+    height: { xs: "fit-content", md: "213px" },
     backgroundColor: "#2F3437",
     borderTop: `5px solid ${color}`,
   }),
   cards: {
     display: "flex",
+    flexDirection: { xs: "column", md: "row" },
     justifyContent: "center",
     alignItems: "center",
     gap: "20px",
-    transform: "scale(0.7)",
+    transform: { xs: "scale(0.9)", md: "scale(0.7)" },
   },
 
   alert: {

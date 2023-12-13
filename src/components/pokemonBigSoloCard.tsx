@@ -6,9 +6,10 @@ import TypesBox from "@/components/TypesBox";
 const PokemonBigSoloCard = async (pokemon: any) => {
   return (
     <Container sx={styles.pokemon}>
-      <Box sx={styles.pokemonSprite}>
-        <PokeballSvg width="600" height="580" />
+      <Box sx={styles.pokemonSpriteBox}>
+        <PokeballSvg width="100%" height="580" />
         <Box
+          sx={styles.pokemonSprite}
           component="img"
           src={
             pokemon.pokemon.pokemonData.sprites.other["official-artwork"]
@@ -43,22 +44,26 @@ export default PokemonBigSoloCard;
 const styles = {
   pokemon: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
     width: "100%",
-    gap: "35px",
+    gap: { xs: "10px", md: "35px" },
   },
-  pokemonSprite: {
+  pokemonSpriteBox: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  pokemonSprite: {
+    width: { xs: "100%", md: "475px" },
   },
   name: {
     fontWeight: 700,
     fontFamily: "var(--font-monteserrat)",
   },
   number: {
+    marginTop: "25px",
     fontSize: "30px",
     fontWeight: 900,
     color: "#707070",
