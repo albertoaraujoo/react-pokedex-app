@@ -1,8 +1,10 @@
 "use client";
 import { PokeDataFetching } from "@/Hooks/useDataFetching";
+import Arrow from "@/components/Arrow";
 import PokemonCard from "@/components/PokemonCard";
+import PrevAndNextButtons from "@/components/PrevAndNextButtonsMainPage";
 import { PokemonData } from "@/interfaces/interfaces";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { useState, useEffect } from "react";
 
 const PokemonList = () => {
@@ -24,20 +26,21 @@ const PokemonList = () => {
 
   return (
     <Container sx={styles.container}>
-      {pokeList?.map((pokemon: PokemonData) => (
-        <PokemonCard
-          key={pokemon.name}
-          url={pokemon.url}
-          name={pokemon.name}
-          order={pokemon.order}
-          types={pokemon.types}
-          sprite={pokemon.sprite}
-          animatedSprite={pokemon.animatedSprite}
-        />
-      ))}
-
-      <button onClick={nextPage}>next</button>
-      <button onClick={prevPage}>prev</button>
+      <PrevAndNextButtons function1={prevPage} function2={nextPage} />
+      <Box sx={styles.pokeListContainer}>
+        {pokeList?.map((pokemon: PokemonData) => (
+          <PokemonCard
+            key={pokemon.name}
+            url={pokemon.url}
+            name={pokemon.name}
+            order={pokemon.order}
+            types={pokemon.types}
+            sprite={pokemon.sprite}
+            animatedSprite={pokemon.animatedSprite}
+          />
+        ))}
+      </Box>
+      <PrevAndNextButtons function1={prevPage} function2={nextPage} />
     </Container>
   );
 };
@@ -50,11 +53,21 @@ const styles = {
     justifyContent: "center",
     boxSizing: "border-box",
     alignItems: "center",
-    gap: { xs: "5px", sm: "55px", lg: "35px" },
     width: "100%",
     padding: "25px",
     flexWrap: "wrap",
     height: "100%",
     marginTop: "50px",
+  },
+  pokeListContainer: {
+    display: "flex",
+    justifyContent: "center",
+    boxSizing: "border-box",
+    alignItems: "center",
+    gap: { xs: "10px", sm: "35px", lg: "25px" },
+    width: "100%",
+    padding: "25px",
+    flexWrap: "wrap",
+    height: "100%",
   },
 };

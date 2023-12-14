@@ -49,6 +49,19 @@ export type pokeballDimensions = {
   height: string;
 };
 
+export type ArrowProps = {
+  width: string;
+  height: string;
+  direction: boolean;
+  color: string;
+  onClick: () => void;
+};
+
+export type PrevAndNextButtonMainPage = {
+  function1: () => void;
+  function2: () => void;
+};
+
 export type PokemonTypeBox = {
   children: React.ReactNode;
   iconWidth: string;
