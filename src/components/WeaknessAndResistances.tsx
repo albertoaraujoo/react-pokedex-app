@@ -78,6 +78,7 @@ const styles = {
     minHeight: "170px",
     gap: "15px",
     backgroundColor: "#2F3437",
+    paddingBottom: "10px",
     borderTop: `5px solid ${color}`,
   }),
   resistancesAndWeakness: {
@@ -91,6 +92,7 @@ const styles = {
 
   resistanceAndWeaknessBox: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
   },
 
