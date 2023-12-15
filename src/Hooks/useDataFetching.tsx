@@ -83,6 +83,9 @@ export const PokemonSoloStats = async (id: string) => {
                 type2: data.types.length > 1 ? data.types[1].type.name : "",
               },
             };
+          })
+          .catch((err) => {
+            console.log("error:" + err);
           }),
       },
       {
@@ -108,6 +111,9 @@ export const PokemonSoloStats = async (id: string) => {
                     type2: data.types.length > 1 ? data.types[1].type.name : "",
                   },
                 };
+              })
+              .catch((err) => {
+                console.log("an error has occurred:" + err);
               })
           : null,
       },

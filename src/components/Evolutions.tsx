@@ -10,23 +10,23 @@ import {
 const Evolutions = async ({ pokemon, color }: WeaknessAndResistancesProps) => {
   const evolutionsData = await useHandleEvolutionsCards(pokemon);
 
-  return (
+  return !evolutionsData || evolutionsData.length === 0 ? (
+    <Box sx={{ display: "none" }}></Box>
+  ) : (
     <Container sx={styles.container(color)}>
       <SoloStatsTitle text="Evolutions" />
       <Box sx={styles.cards}>
-        {evolutionsData.map((evolution: PokemonData, index: any) => {
-          return (
-            <PokemonCard
-              animatedSprite={evolution.animatedSprite}
-              name={evolution.name}
-              order={evolution.order}
-              sprite={evolution.sprite}
-              key={index}
-              types={evolution.types}
-              url={evolution.name}
-            />
-          );
-        })}
+        {evolutionsData.map((evolution: PokemonData, index: any) => (
+          <PokemonCard
+            animatedSprite={evolution.animatedSprite}
+            name={evolution.name}
+            order={evolution.order}
+            sprite={evolution.sprite}
+            key={index}
+            types={evolution.types}
+            url={evolution.name}
+          />
+        ))}
       </Box>
     </Container>
   );

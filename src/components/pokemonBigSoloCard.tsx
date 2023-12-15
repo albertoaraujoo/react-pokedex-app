@@ -21,7 +21,9 @@ const PokemonBigSoloCard = async (pokemon: any) => {
         #{pokemon.pokemon.pokemonData.id}
       </Typography>
       <Typography sx={styles.name} variant="h4">
-        {capitalizeFirstLetter(pokemon.pokemon.pokemonData.name)}
+        {pokemon.pokemon.pokemonData.name === "deoxys normal"
+          ? capitalizeFirstLetter("Deoxys")
+          : capitalizeFirstLetter(pokemon.pokemon.pokemonData.name)}
       </Typography>
       <TypesBox
         iconHeight="35px"
@@ -61,6 +63,7 @@ const styles = {
   name: {
     fontWeight: 700,
     fontFamily: "var(--font-monteserrat)",
+    fontSize: { xs: "25px", sm: "28px", md: "30px", lg: "34px" },
   },
   number: {
     marginTop: "25px",
