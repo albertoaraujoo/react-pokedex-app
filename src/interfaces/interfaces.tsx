@@ -58,8 +58,8 @@ export type ArrowProps = {
 };
 
 export type PrevAndNextButtonMainPage = {
-  function1: () => void;
-  function2: () => void;
+  firstFunction: () => void;
+  secondFunction: () => void;
 };
 
 export type PokemonTypeBox = {

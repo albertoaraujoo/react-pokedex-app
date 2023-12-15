@@ -1,8 +1,28 @@
-import { AppBar } from "@mui/material";
+"use client";
+import Arrow from "@/components/Arrow";
+import { AppBar, Box } from "@mui/material";
+import { usePathname } from "next/navigation";
+
 import React from "react";
 
 const Navbar = () => {
-  return <AppBar sx={styles.navbar}>Pokédex</AppBar>;
+  const url = usePathname();
+  console.log(url);
+  return (
+    <AppBar sx={styles.navbar}>
+      <Arrow
+        color="#FFFFFF"
+        direction={false}
+        height="30px"
+        width="30px"
+        onClick={() => {
+          console.log("botão massa");
+        }}
+      />
+
+      <Box>Pokédex</Box>
+    </AppBar>
+  );
 };
 
 export default Navbar;
@@ -10,6 +30,7 @@ export default Navbar;
 const styles = {
   navbar: {
     display: "flex",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     width: "100%",

@@ -4,20 +4,20 @@ import { PrevAndNextButtonMainPage } from "@/interfaces/interfaces";
 import { Box } from "@mui/material";
 
 const PrevAndNextButtonMainPage = ({
-  function1,
-  function2,
+  firstFunction,
+  secondFunction,
 }: PrevAndNextButtonMainPage) => {
   return (
     <Box sx={styles.buttonsBox}>
       <Arrow
-        onClick={function1}
+        onClick={firstFunction}
         direction={false}
         width="35"
         height="35"
         color="#FFFFFF"
       />
       <Arrow
-        onClick={function2}
+        onClick={secondFunction}
         direction={true}
         width="35"
         height="35"

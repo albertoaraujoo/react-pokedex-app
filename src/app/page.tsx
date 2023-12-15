@@ -1,5 +1,5 @@
 import PokemonList from "@/sections/PokemonList";
 
-export default async function Home() {
+export default function Home() {
   return <PokemonList />;
 }

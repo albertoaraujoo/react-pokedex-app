@@ -1,10 +1,9 @@
 "use client";
 import { PokeDataFetching } from "@/Hooks/useDataFetching";
-import Arrow from "@/components/Arrow";
 import PokemonCard from "@/components/PokemonCard";
 import PrevAndNextButtons from "@/components/PrevAndNextButtonsMainPage";
 import { PokemonData } from "@/interfaces/interfaces";
-import { Box, Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { useState, useEffect } from "react";
 
 const PokemonList = () => {
@@ -26,21 +25,31 @@ const PokemonList = () => {
 
   return (
     <Container sx={styles.container}>
-      <PrevAndNextButtons function1={prevPage} function2={nextPage} />
-      <Box sx={styles.pokeListContainer}>
+      <PrevAndNextButtons firstFunction={prevPage} secondFunction={nextPage} />
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        spacing="auto"
+        columnGap={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+        rowGap={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+        sx={styles.pokeListContainer}
+      >
         {pokeList?.map((pokemon: PokemonData) => (
-          <PokemonCard
-            key={pokemon.name}
-            url={pokemon.url}
-            name={pokemon.name}
-            order={pokemon.order}
-            types={pokemon.types}
-            sprite={pokemon.sprite}
-            animatedSprite={pokemon.animatedSprite}
-          />
+          <Grid item key={pokemon.name} xs="auto">
+            <PokemonCard
+              key={pokemon.name}
+              url={pokemon.url}
+              name={pokemon.name}
+              order={pokemon.order}
+              types={pokemon.types}
+              sprite={pokemon.sprite}
+              animatedSprite={pokemon.animatedSprite}
+            />
+          </Grid>
         ))}
-      </Box>
-      <PrevAndNextButtons function1={prevPage} function2={nextPage} />
+      </Grid>
+      <PrevAndNextButtons firstFunction={prevPage} secondFunction={nextPage} />
     </Container>
   );
 };
@@ -51,23 +60,14 @@ const styles = {
   container: {
     display: "flex",
     justifyContent: "center",
-    boxSizing: "border-box",
     alignItems: "center",
     width: "100%",
-    padding: "25px",
+    padding: "20px",
     flexWrap: "wrap",
-    height: "100%",
     marginTop: "50px",
   },
   pokeListContainer: {
-    display: "flex",
-    justifyContent: "center",
-    boxSizing: "border-box",
-    alignItems: "center",
-    gap: { xs: "10px", sm: "35px", lg: "25px" },
-    width: "100%",
-    padding: "25px",
-    flexWrap: "wrap",
-    height: "100%",
+    marginTop: "10px",
+    marginBottom: "12px",
   },
 };
