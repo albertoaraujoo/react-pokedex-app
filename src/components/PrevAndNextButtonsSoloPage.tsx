@@ -18,20 +18,26 @@ const PrevAndNextButtonsSoloPage = ({ id }: IdProp) => {
   };
   return (
     <Box sx={styles.buttonsBox}>
-      <Arrow
-        onClick={prevPage}
-        direction={false}
-        width="35"
-        height="35"
-        color="#FFFFFF"
-      />
-      <Arrow
-        onClick={nextPage}
-        direction={true}
-        width="35"
-        height="35"
-        color="#FFFFFF"
-      />
+      <Box sx={styles.buttons}>
+        Prev
+        <Arrow
+          onClick={prevPage}
+          direction={false}
+          width="35"
+          height="35"
+          color="#FFFFFF"
+        />{" "}
+      </Box>
+      <Box sx={styles.buttons}>
+        <Arrow
+          onClick={nextPage}
+          direction={true}
+          width="35"
+          height="35"
+          color="#FFFFFF"
+        />{" "}
+        Next
+      </Box>
     </Box>
   );
 };
@@ -43,6 +49,10 @@ const styles = {
     display: "flex",
     marginTop: "12px",
     marginBottom: "12px",
-    gap: "15px",
+    gap: { xs: 0, md: "15px" },
+  },
+
+  buttons: {
+    fontSize: "12px",
   },
 };

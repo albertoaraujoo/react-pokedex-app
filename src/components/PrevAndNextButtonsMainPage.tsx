@@ -9,20 +9,26 @@ const PrevAndNextButtonMainPage = ({
 }: PrevAndNextButtonMainPage) => {
   return (
     <Box sx={styles.buttonsBox}>
-      <Arrow
-        onClick={firstFunction}
-        direction={false}
-        width="35"
-        height="35"
-        color="#FFFFFF"
-      />
-      <Arrow
-        onClick={secondFunction}
-        direction={true}
-        width="35"
-        height="35"
-        color="#FFFFFF"
-      />
+      <Box sx={styles.buttons}>
+        Prev
+        <Arrow
+          onClick={firstFunction}
+          direction={false}
+          width="35"
+          height="35"
+          color="#FFFFFF"
+        />
+      </Box>
+      <Box sx={styles.buttons}>
+        <Arrow
+          onClick={secondFunction}
+          direction={true}
+          width="35"
+          height="35"
+          color="#FFFFFF"
+        />{" "}
+        Next
+      </Box>
     </Box>
   );
 };
@@ -35,5 +41,9 @@ const styles = {
     marginTop: "12px",
     marginBottom: "12px",
     gap: "15px",
+  },
+  buttons: {
+    fontSize: "12px",
+    color: "#FFFFFF",
   },
 };

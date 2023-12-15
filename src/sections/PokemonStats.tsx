@@ -9,6 +9,7 @@ import { allPokemonTypes } from "@/components/AllPokemonTypes";
 import Shiny from "@/components/Shiny";
 import PokemonBigSoloCard from "@/components/pokemonBigSoloCard";
 import PrevAndNextButtonsSoloPage from "@/components/PrevAndNextButtonsSoloPage";
+import ButtonHome from "@/components/ButtonHome";
 
 const PokemonStats = async ({ id }: IdProp) => {
   const pokemon = await PokemonSoloStats(id);
@@ -20,6 +21,9 @@ const PokemonStats = async ({ id }: IdProp) => {
 
   return (
     <Container sx={styles.container}>
+      <Box sx={{ position: "absolute", left: 0, top: 60 }}>
+        <ButtonHome color={color ? color : "#FFFFFF"} />
+      </Box>
       <PrevAndNextButtonsSoloPage id={id} />
       <Box sx={styles.contentBox}>
         <PokemonBigSoloCard pokemon={pokemon} />

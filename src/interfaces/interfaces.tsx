@@ -53,8 +53,12 @@ export type ArrowProps = {
   width: string;
   height: string;
   direction: boolean;
-  color: string;
+  color: string | null;
   onClick: () => void;
+};
+
+export type ButtonHomeProps = {
+  color: string;
 };
 
 export type PrevAndNextButtonMainPage = {

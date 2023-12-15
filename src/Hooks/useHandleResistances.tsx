@@ -30,14 +30,14 @@ export const HandleResistances = (
     );
 
     const noDamageType1 = new Set(
-      array[index1].damage_relations.no_damage_from.map(
-        (item: any) => item.name
+      array[index1]?.damage_relations.no_damage_from?.map(
+        (item: any) => item?.name
       )
     );
 
     const noDamageType2 = new Set(
-      array[index2].damage_relations.no_damage_from.map(
-        (item: any) => item.name
+      array[index2]?.damage_relations.no_damage_from?.map(
+        (item: any) => item?.name
       )
     );
 
@@ -68,6 +68,15 @@ export const HandleResistances = (
     );
 
     halfDamage.forEach((type1) => {
+      resistances.add(type1);
+    });
+
+    const noDamage = new Set(
+      array[index1].damage_relations.no_damage_from.map(
+        (item: any) => item.name
+      )
+    );
+    noDamage.forEach((type1) => {
       resistances.add(type1);
     });
   }

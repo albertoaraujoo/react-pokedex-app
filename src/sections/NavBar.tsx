@@ -1,28 +1,9 @@
-"use client";
-import Arrow from "@/components/Arrow";
-import { AppBar, Box } from "@mui/material";
-import { usePathname } from "next/navigation";
+import { AppBar } from "@mui/material";
 
 import React from "react";
 
 const Navbar = () => {
-  const url = usePathname();
-  console.log(url);
-  return (
-    <AppBar sx={styles.navbar}>
-      <Arrow
-        color="#FFFFFF"
-        direction={false}
-        height="30px"
-        width="30px"
-        onClick={() => {
-          console.log("botão massa");
-        }}
-      />
-
-      <Box>Pokédex</Box>
-    </AppBar>
-  );
+  return <AppBar sx={styles.navbar}>Pokédex</AppBar>;
 };
 
 export default Navbar;
