@@ -1,14 +1,17 @@
 import IconPokeball from "@/components/IconPokeball";
 import { AppBar } from "@mui/material";
+import Link from "next/link";
 
 import React from "react";
 
 const Navbar = () => {
   return (
-    <AppBar sx={styles.navbar}>
-      <IconPokeball />
-      Pokédex
-    </AppBar>
+    <Link href="/">
+      <AppBar sx={styles.navbar}>
+        <IconPokeball />
+        Pokédex
+      </AppBar>
+    </Link>
   );
 };
 
