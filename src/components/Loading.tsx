@@ -3,7 +3,7 @@ import { Box, Container } from "@mui/material";
 export default function Loading() {
   return (
     <Container>
-      <Box sx={styles.container}>Loading... Hopefully not for so long :)</Box>
+      <Box sx={styles.container}>Loading... </Box>
       <div
         className="tenor-gif-embed"
         data-postid="20178372"

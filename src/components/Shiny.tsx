@@ -6,19 +6,22 @@ const Shiny = ({ pokemon, color }: WeaknessAndResistancesProps) => {
   return (
     <Container sx={styles.container(color)}>
       <SoloStatsTitle text="Shiny Version:" />
-
       <Box sx={styles.imagesBox}>
         <Box
           component="img"
           src={pokemon.pokemonData.sprites.front_shiny}
           sx={styles.shiny}
         />
-        <Divider sx={styles.divider} orientation="vertical" />
-        <Box
-          component="img"
-          src={pokemon.pokemonData.sprites.back_shiny}
-          sx={styles.shiny}
-        />
+        {pokemon.pokemonData.sprites.back_shiny ? (
+          <Divider sx={styles.divider} orientation="vertical" />
+        ) : null}
+        {pokemon.pokemonData.sprites.back_shiny ? (
+          <Box
+            component="img"
+            src={pokemon.pokemonData.sprites.back_shiny}
+            sx={styles.shiny}
+          />
+        ) : null}
       </Box>
     </Container>
   );
