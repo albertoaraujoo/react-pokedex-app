@@ -67,6 +67,18 @@ const PokemonCard = ({
 export default PokemonCard;
 
 const styles = {
+  card: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "space-between",
+    width: "150px",
+    height: "200px",
+    backgroundColor: "#2F3437",
+    border: "1px solid #000",
+    boxShadow: "0px 2px 8px 0px #00000022",
+    cursor: "pointer",
+  },
   nameAndNumber: {
     display: "flex",
     justifyContent: "space-around",
@@ -87,17 +99,6 @@ const styles = {
     fontWeight: "900",
     color: "#707070",
   },
-  card: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "space-between",
-    width: "150px",
-    height: "200px",
-    backgroundColor: "#2F3437",
-    border: "1px solid #000",
-    boxShadow: "0px 2px 8px 0px #00000022",
-  },
   cardSprite: {
     display: "flex",
     justifyContent: "center",
@@ -105,12 +106,10 @@ const styles = {
     zIndex: 2,
     transition: "transform 0.5s ease-in-out",
   },
-
   sprite: (onMove: boolean) => ({
     width: onMove ? "90px" : "120px",
     height: onMove ? "90px" : "120px",
   }),
-
   typeName: {
     boxShadow: "0px 2px 8px 0px #00000022",
     backgroundColor: "#74BEB5",

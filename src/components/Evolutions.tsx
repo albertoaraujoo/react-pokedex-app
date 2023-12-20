@@ -1,5 +1,5 @@
 import { Box, Container } from "@mui/material";
-import PokemonCard from "./PokemonCard";
+import PokemonCard from "@/components/PokemonCard";
 import SoloStatsTitle from "./SoloStatsTitle";
 import { useHandleEvolutionsCards } from "@/Hooks/useHandleEvolutionsCards";
 import {

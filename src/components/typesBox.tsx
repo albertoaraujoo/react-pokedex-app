@@ -16,7 +16,7 @@ const TypesBox = ({
   iconWidth,
 }: PokemonTypes) => {
   return (
-    <Box sx={styles.TypesBox}>
+    <Box sx={styles.TypesBoxStyles}>
       <TypeComponent
         title={capitalizeFirstLetter(type1)}
         width={width}
@@ -46,7 +46,7 @@ const TypesBox = ({
 export default TypesBox;
 
 const styles = {
-  TypesBox: {
+  TypesBoxStyles: {
     display: "flex",
     justifyContent: "center",
     marginBottom: "5px",

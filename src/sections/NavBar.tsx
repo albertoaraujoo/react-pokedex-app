@@ -1,17 +1,33 @@
+"use client";
 import IconPokeball from "@/components/IconPokeball";
-import { AppBar } from "@mui/material";
-import Link from "next/link";
-
-import React from "react";
+import { useOffsetStore } from "@/stores/useOffsetStore";
+import { AppBar, Box } from "@mui/material";
+import { usePathname, useRouter } from "next/navigation";
+import SearchField from "@/components/SearchField";
 
 const Navbar = () => {
+  const offset = useOffsetStore((state) => state.offset);
+  const setOffset = useOffsetStore((state) => state.setOffset);
+  const url = usePathname();
+  const router = useRouter();
+
+  const handleOffsetInNavbar = () => {
+    url === "/" ? setOffset(0) : setOffset(offset);
+    router.push("/");
+  };
+
   return (
-    <Link href="/">
+    <Box>
       <AppBar sx={styles.navbar}>
-        <IconPokeball />
-        Pokédex
+        <Box onClick={handleOffsetInNavbar} sx={styles.logoAndText}>
+          <IconPokeball />
+          Pokédex
+        </Box>
+        <Box sx={styles.logoAndText}>
+          <SearchField />
+        </Box>
       </AppBar>
-    </Link>
+    </Box>
   );
 };
 
@@ -21,11 +37,10 @@ const styles = {
   navbar: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     width: "100%",
-    height: "50px",
-    gap: "10px",
+    height: "60px",
     fontWeight: 700,
     fontSize: "20px",
     backgroundColor: "#18181B",
@@ -33,5 +48,14 @@ const styles = {
     position: "fixed",
     top: 0,
     bottom: "auto",
+    cursor: "pointer",
+  },
+  logoAndText: {
+    display: "flex",
+    gap: "10px",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "50%",
   },
 };

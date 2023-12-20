@@ -26,6 +26,11 @@ export type TypeComponentProps = {
   title: string;
 };
 
+export type DataFetchingResult = {
+  fullData: PokemonData[];
+  searchData: SelectData[];
+};
+
 export type PokemonData = {
   fetch?: Promise<PokemonData>;
   name: string;
@@ -34,6 +39,20 @@ export type PokemonData = {
   types: PokemonTypes;
   sprite: string;
   animatedSprite: string;
+};
+
+export type SearchListProps = {
+  open: boolean;
+  filteredData: any;
+  selectData: SelectData[];
+  inputValue: string;
+  setOpen: any;
+};
+
+export type SelectData = {
+  name: string;
+  url: string;
+  order: string | number;
 };
 
 export type StatsTitle = {
@@ -62,8 +81,8 @@ export type ButtonHomeProps = {
 };
 
 export type PrevAndNextButtonMainPage = {
-  firstFunction: () => void;
-  secondFunction: () => void;
+  firstFunction: any;
+  secondFunction: any;
 };
 
 export type PokemonTypeBox = {

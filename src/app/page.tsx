@@ -1,9 +1,5 @@
-// "use client";
-// import { PokemonSoloStats } from "@/Hooks/useDataFetching";
 import PokemonList from "@/sections/PokemonList";
 
-export default async function Home() {
-  // const pokemon = await PokemonSoloStats("412");
-  // console.log(pokemon);
+export default function Home() {
   return <PokemonList />;
 }
