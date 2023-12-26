@@ -5,8 +5,8 @@ import { filterData } from "@/utils/filterDataSelect";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import ArrowSelect from "./ArrowSelect";
-
 import SearchList from "./SearchList";
+import { useIsPokelistStore } from "@/stores/useIsPokelistStore";
 
 const SearchField = () => {
   const [selectData, setSelectData] = useState<SelectData[]>([]);
@@ -15,6 +15,7 @@ const SearchField = () => {
     []
   );
   const [open, setOpen] = useState(false);
+  const isPokelist = useIsPokelistStore((state) => state.isPokelist);
 
   const toggleOpen = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -22,12 +23,14 @@ const SearchField = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await SelectDataFetch();
-      setSelectData(data);
+      if (isPokelist) {
+        const data = await SelectDataFetch();
+        setSelectData(data);
+      }
     };
 
     fetchData();
-  }, []);
+  }, [isPokelist]);
 
   useEffect(() => {
     const filteredData = filterData(selectData, inputValue);
@@ -37,6 +40,7 @@ const SearchField = () => {
   return (
     <Box sx={styles.container}>
       <TextField
+        placeholder="Search "
         sx={styles.textfield}
         size="small"
         variant="outlined"
@@ -48,13 +52,10 @@ const SearchField = () => {
             </InputAdornment>
           ),
         }}
-      >
-        <ArrowSelect />
-      </TextField>
+      />
 
       <SearchList
         open={open}
-        setOpen={setOpen}
         filteredData={filteredSelectData}
         selectData={selectData}
         inputValue={inputValue}

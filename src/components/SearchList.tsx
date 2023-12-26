@@ -9,38 +9,46 @@ const SearchList = ({
   filteredData,
   selectData,
   inputValue,
-  setOpen,
 }: SearchListProps) => {
   const router = useRouter();
-  return open ? (
-    <List sx={styles.list}>
-      {inputValue !== "" && filteredData.length > 0
-        ? filteredData.map((pokemon: SelectData) => (
-            <ListItem
-              key={pokemon.order}
-              sx={styles.listItem}
-              onClick={(e) => {
-                e.stopPropagation();
-                router.push(`/pokemon/${pokemon.order.toString()}`);
-              }}
-            >
-              {capitalizeFirstLetter(pokemon.name)}
-            </ListItem>
-          ))
-        : selectData.map((pokemon: SelectData) => (
-            <ListItem
-              key={pokemon.order}
-              sx={styles.listItem}
-              onClick={(e) => {
-                e.stopPropagation();
-                router.push(`/pokemon/${pokemon.order.toString()}`);
-              }}
-            >
-              {capitalizeFirstLetter(pokemon.name)}
-            </ListItem>
-          ))}
-    </List>
-  ) : null;
+
+  return (
+    <>
+      {open ? (
+        <List sx={styles.list}>
+          {inputValue !== "" && filteredData.length > 0 ? (
+            filteredData.map((pokemon: SelectData) => (
+              <ListItem
+                key={pokemon.order}
+                sx={styles.listItem}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  router.push(`/pokemon/${pokemon.order.toString()}`);
+                }}
+              >
+                {capitalizeFirstLetter(pokemon.name)}
+              </ListItem>
+            ))
+          ) : selectData.length < 1 ? (
+            <ListItem sx={styles.listItem}>Loading...</ListItem>
+          ) : (
+            selectData.map((pokemon: SelectData) => (
+              <ListItem
+                key={pokemon.order}
+                sx={styles.listItem}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  router.push(`/pokemon/${pokemon.order.toString()}`);
+                }}
+              >
+                {capitalizeFirstLetter(pokemon.name)}
+              </ListItem>
+            ))
+          )}
+        </List>
+      ) : null}
+    </>
+  );
 };
 
 export default SearchList;

@@ -14,7 +14,7 @@ const ButtonHome = ({ color }: ButtonHomeProps) => {
   const theColor = color === "58575F" ? "#77767F" : color;
 
   return (
-    <Box sx={styles.buttonBox(theColor)}>
+    <Box onClick={backHome} sx={styles.buttonBox(theColor)}>
       <Arrow
         onClick={backHome}
         width="30px"
@@ -33,10 +33,12 @@ const styles = {
   buttonBox: (theColor: string) => ({
     color: theColor,
     display: "flex",
+    marginTop: "10px",
     flexDirection: { xs: "column", sm: "row" },
     justifyContent: "center",
     alignItems: "center",
     fontSize: { xs: "12px", sm: "16px" },
     fontWeight: 700,
+    cursor: "pointer",
   }),
 };

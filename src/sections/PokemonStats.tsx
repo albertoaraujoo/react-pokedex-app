@@ -7,10 +7,9 @@ import BaseStats from "@/components/BaseStats";
 import { handleColor } from "@/Hooks/useGetColorAndType";
 import { allPokemonTypes } from "@/components/AllPokemonTypes";
 import Shiny from "@/components/Shiny";
-
 import PrevAndNextButtonsSoloPage from "@/components/PrevAndNextButtonsSoloPage";
 import ButtonHome from "@/components/ButtonHome";
-import PokemonBigSoloCard from "@/components/pokemonBigSoloCard";
+import PokemonBigSoloCard from "@/components/PokemonBigSoloCard";
 
 const PokemonStats = async ({ id }: IdProp) => {
   const pokemon = await PokemonSoloStats(id);

@@ -4,6 +4,7 @@ import Loading from "@/components/Loading";
 import PokemonCard from "@/components/PokemonCard";
 import PrevAndNextButtons from "@/components/PrevAndNextButtonsMainPage";
 import { PokemonData } from "@/interfaces/interfaces";
+import { useIsPokelistStore } from "@/stores/useIsPokelistStore";
 import { useOffsetStore } from "@/stores/useOffsetStore";
 import { Container, Grid } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -13,6 +14,7 @@ const PokemonList = () => {
   const limit = useOffsetStore((state) => state.limit);
   const setOffset = useOffsetStore((state) => state.setOffset);
   const [pokeList, setPokeList] = useState<PokemonData[]>([]);
+  const setIsPokelist = useIsPokelistStore((state) => state.setIsPokelist);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +24,15 @@ const PokemonList = () => {
 
     fetchData();
   }, [offset, limit]);
+
+  useEffect(() => {
+    const handleIsPokelist = () => {
+      if (pokeList.length > 0) {
+        setIsPokelist(true);
+      }
+    };
+    handleIsPokelist();
+  }, [pokeList]);
 
   const nextPage = () => setOffset(offset + limit);
   const prevPage = () => setOffset(Math.max(0, offset - limit));
@@ -80,6 +91,7 @@ const styles = {
     padding: "20px",
     flexWrap: "wrap",
     marginTop: "50px",
+    transition: "opacity 1.5s ease-in-out",
   },
   pokeListContainer: {
     marginTop: "10px",

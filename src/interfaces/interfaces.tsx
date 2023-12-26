@@ -46,7 +46,6 @@ export type SearchListProps = {
   filteredData: any;
   selectData: SelectData[];
   inputValue: string;
-  setOpen: any;
 };
 
 export type SelectData = {
