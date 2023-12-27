@@ -1,6 +1,6 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import { capitalizeFirstLetter } from "../utils/textFormater";
+import { capitalizeFirstLetter } from "@/utils/textFormater";
 import PokeballSvg from "@/components/PokeballSvgBackground";
 import { PokemonData } from "@/interfaces/interfaces";
 import { useState } from "react";

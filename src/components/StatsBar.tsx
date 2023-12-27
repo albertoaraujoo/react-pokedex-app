@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "@/components/ProgressBar";
 import { BaseStat } from "@/interfaces/interfaces";
 import { capitalizeFirstLetter } from "@/utils/textFormater";
 

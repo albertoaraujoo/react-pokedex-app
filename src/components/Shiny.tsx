@@ -1,6 +1,6 @@
 import { WeaknessAndResistancesProps } from "@/interfaces/interfaces";
 import { Container, Box, Divider } from "@mui/material";
-import SoloStatsTitle from "./SoloStatsTitle";
+import SoloStatsTitle from "@/components/SoloStatsTitle";
 
 const Shiny = ({ pokemon, color }: WeaknessAndResistancesProps) => {
   return (

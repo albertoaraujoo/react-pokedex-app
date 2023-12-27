@@ -1,7 +1,7 @@
 "use client";
 import { Box } from "@mui/material";
 import { handleType, handleColor } from "@/Hooks/useGetColorAndType";
-import { PokemonTypes } from "../interfaces/interfaces";
+import { PokemonTypes } from "@/interfaces/interfaces";
 import TypeComponent from "@/components/TypeComponent";
 import { allPokemonTypes } from "@/utils/AllPokemonTypes";
 import { capitalizeFirstLetter } from "@/utils/textFormater";

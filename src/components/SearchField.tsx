@@ -4,8 +4,8 @@ import { SelectData } from "@/interfaces/interfaces";
 import { filterData } from "@/utils/filterDataSelect";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import ArrowSelect from "./ArrowSelect";
-import SearchList from "./SearchList";
+import ArrowSelect from "@/components/ArrowSelect";
+import SearchList from "@/components/SearchList";
 import { useIsPokelistStore } from "@/stores/useIsPokelistStore";
 
 const SearchField = () => {

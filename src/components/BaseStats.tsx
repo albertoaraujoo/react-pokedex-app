@@ -1,8 +1,8 @@
 import { Container } from "@mui/material";
 import React from "react";
 import { BaseStat, WeaknessAndResistancesProps } from "@/interfaces/interfaces";
-import StatsBar from "./StatsBar";
-import SoloStatsTitle from "./SoloStatsTitle";
+import StatsBar from "@/components/StatsBar";
+import SoloStatsTitle from "@/components/SoloStatsTitle";
 
 const BaseStats = async ({ pokemon, color }: WeaknessAndResistancesProps) => {
   return (
