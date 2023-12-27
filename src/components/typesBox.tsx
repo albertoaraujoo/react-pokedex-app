@@ -2,10 +2,10 @@
 import { Box } from "@mui/material";
 import { handleType, handleColor } from "@/Hooks/useGetColorAndType";
 import { PokemonTypes } from "../interfaces/interfaces";
-import TypeComponent from "./TypeComponent";
-import { allPokemonTypes } from "./AllPokemonTypes";
-import PokemonTypeBox from "./PokemonTypeBox";
+import TypeComponent from "@/components/TypeComponent";
+import { allPokemonTypes } from "@/components/AllPokemonTypes";
 import { capitalizeFirstLetter } from "@/utils/textFormater";
+import PokemonTypeBox from "@/components/PokemonTypeBox";
 
 const TypesBox = ({
   type1,
