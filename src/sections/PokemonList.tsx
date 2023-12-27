@@ -2,6 +2,7 @@
 import { PokeDataFetching } from "@/Hooks/useDataFetching";
 import Loading from "@/components/Loading";
 import PokemonCard from "@/components/PokemonCard";
+
 import PrevAndNextButtons from "@/components/PrevAndNextButtonsMainPage";
 import { PokemonData } from "@/interfaces/interfaces";
 import { useIsPokelistStore } from "@/stores/useIsPokelistStore";

@@ -44,7 +44,7 @@ const styles = {
     fontWeight: 700,
     fontSize: "20px",
     backgroundColor: "#18181B",
-    color: "white",
+    color: "#FFFFFF",
     position: "fixed",
     top: 0,
     bottom: "auto",
