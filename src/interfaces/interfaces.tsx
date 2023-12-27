@@ -84,7 +84,7 @@ export type PrevAndNextButtonMainPage = {
   secondFunction: any;
 };
 
-export type PokemonTypeBox = {
+export type PokemonTypeBoxProps = {
   children: React.ReactNode;
   iconWidth: string;
   iconHeight: string;

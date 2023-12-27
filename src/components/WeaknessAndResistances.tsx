@@ -1,8 +1,8 @@
-import TypeComponent from "./TypeComponent";
+import TypeComponent from "@/components/TypeComponent";
 import { handleResitancesAndWeaknesses } from "@/Hooks/useResistancesAndWeaknesses";
 import PokemonTypeBox from "@/components/PokemonTypeBox";
 import { handleColor, handleType } from "@/Hooks/useGetColorAndType";
-import { allPokemonTypes } from "./AllPokemonTypes";
+import { allPokemonTypes } from "@/components/AllPokemonTypes";
 import { Box, Container, Divider } from "@mui/material";
 import { capitalizeFirstLetter } from "@/utils/textFormater";
 import SoloStatsTitle from "@/components/SoloStatsTitle";
