@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { handleType, handleColor } from "@/Hooks/useGetColorAndType";
 import { PokemonTypes } from "../interfaces/interfaces";
 import TypeComponent from "@/components/TypeComponent";
-import { allPokemonTypes } from "@/components/AllPokemonTypes";
+import { allPokemonTypes } from "@/utils/AllPokemonTypes";
 import { capitalizeFirstLetter } from "@/utils/textFormater";
 import PokemonTypeBox from "@/components/PokemonTypeBox";
 

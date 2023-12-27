@@ -5,8 +5,9 @@ import WeaknessAndResistances from "@/components/WeaknessAndResistances";
 import Evolutions from "@/components/Evolutions";
 import BaseStats from "@/components/BaseStats";
 import { handleColor } from "@/Hooks/useGetColorAndType";
-import { allPokemonTypes } from "@/components/AllPokemonTypes";
+import { allPokemonTypes } from "@/utils/AllPokemonTypes";
 import Shiny from "@/components/Shiny";
+
 import PrevAndNextButtonsSoloPage from "@/components/PrevAndNextButtonsSoloPage";
 import ButtonHome from "@/components/ButtonHome";
 import PokemonBigSoloCard from "@/components/PokemonBigSoloCard";
