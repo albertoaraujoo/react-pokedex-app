@@ -71,7 +71,7 @@ export type ArrowProps = {
   width: string;
   height: string;
   direction: boolean;
-  color: string | null;
+  color: any;
   onClick: () => void;
 };
 
