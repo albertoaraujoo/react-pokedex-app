@@ -1,9 +1,9 @@
 "use client";
-import IconPokeball from "@/components/IconPokeball";
-import { useOffsetStore } from "@/stores/useOffsetStore";
+import IconPokeball from "@/app/components/IconPokeball";
+import { useOffsetStore } from "@/app/stores/useOffsetStore";
 import { AppBar, Box } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
-import SearchField from "@/components/SearchField";
+import SearchField from "@/app/components/SearchField";
 
 const Navbar = () => {
   const offset = useOffsetStore((state) => state.offset);

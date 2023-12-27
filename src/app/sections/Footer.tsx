@@ -1,5 +1,5 @@
-import GitHubIcon from "@/components/GitHubIcon";
-import LinkedinIcon from "@/components/LinkedinIcon";
+import GitHubIcon from "@/app/components/GitHubIcon";
+import LinkedinIcon from "@/app/components/LinkedinIcon";
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 

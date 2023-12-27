@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "../sections/NavBar";
-import Footer from "../sections/Footer";
+import Navbar from "./sections/NavBar";
+import Footer from "./sections/Footer";
 import Container from "@mui/material/Container";
 
 import "./page.module.css";

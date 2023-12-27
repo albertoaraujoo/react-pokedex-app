@@ -1,4 +1,4 @@
-import { pokeballDimensions } from "@/interfaces/interfaces";
+import { pokeballDimensions } from "@/app/interfaces/interfaces";
 
 const PokeballSvg = ({ width, height }: pokeballDimensions) => {
   return (

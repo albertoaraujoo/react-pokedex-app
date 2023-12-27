@@ -1,5 +1,5 @@
 import { Box, Tooltip } from "@mui/material";
-import { TypeComponentProps } from "@/interfaces/interfaces";
+import { TypeComponentProps } from "@/app/interfaces/interfaces";
 
 const TypeComponent = ({
   children,

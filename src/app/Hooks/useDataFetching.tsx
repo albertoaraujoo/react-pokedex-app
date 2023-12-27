@@ -1,4 +1,4 @@
-import { PokemonData } from "@/interfaces/interfaces";
+import { PokemonData } from "@/app/interfaces/interfaces";
 
 export const PokeDataFetching = async (
   offset: number = 0,

@@ -1,8 +1,8 @@
 "use client";
-import Arrow from "@/components/Arrow";
+import Arrow from "@/app/components/Arrow";
 import { useRouter } from "next/navigation";
 import { Box } from "@mui/material";
-import { IdProp } from "@/interfaces/interfaces";
+import { IdProp } from "@/app/interfaces/interfaces";
 
 const PrevAndNextButtonsSoloPage = ({ id }: IdProp) => {
   const router = useRouter();

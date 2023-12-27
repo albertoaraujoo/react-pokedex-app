@@ -1,7 +1,7 @@
 import { Container, Typography } from "@mui/material";
-import ProgressBar from "@/components/ProgressBar";
-import { BaseStat } from "@/interfaces/interfaces";
-import { capitalizeFirstLetter } from "@/utils/textFormater";
+import ProgressBar from "@/app/components/ProgressBar";
+import { BaseStat } from "@/app/interfaces/interfaces";
+import { capitalizeFirstLetter } from "@/app/utils/textFormater";
 
 const StatsBar = ({ stat, base_stat }: BaseStat) => {
   return (

@@ -1,12 +1,12 @@
-import TypeComponent from "@/components/TypeComponent";
-import { handleResitancesAndWeaknesses } from "@/Hooks/useResistancesAndWeaknesses";
-import PokemonTypeBox from "@/components/PokemonTypeBox";
-import { handleColor, handleType } from "@/Hooks/useGetColorAndType";
-import { allPokemonTypes } from "@/utils/AllPokemonTypes";
+import TypeComponent from "@/app/components/TypeComponent";
+import { handleResitancesAndWeaknesses } from "@/app/Hooks/useResistancesAndWeaknesses";
+import PokemonTypeBox from "@/app/components/PokemonTypeBox";
+import { handleColor, handleType } from "@/app/Hooks/useGetColorAndType";
+import { allPokemonTypes } from "@/app/utils/AllPokemonTypes";
 import { Box, Container, Divider } from "@mui/material";
-import { capitalizeFirstLetter } from "@/utils/textFormater";
-import SoloStatsTitle from "@/components/SoloStatsTitle";
-import { WeaknessAndResistancesProps } from "@/interfaces/interfaces";
+import { capitalizeFirstLetter } from "@/app/utils/textFormater";
+import SoloStatsTitle from "@/app/components/SoloStatsTitle";
+import { WeaknessAndResistancesProps } from "@/app/interfaces/interfaces";
 
 const WeaknessAndResistances = async ({
   pokemon,

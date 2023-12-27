@@ -1,4 +1,4 @@
-import { SelectData } from "@/interfaces/interfaces";
+import { SelectData } from "@/app/interfaces/interfaces";
 
 export const filterData = (selectData: any, inputValue: any) => {
   return selectData

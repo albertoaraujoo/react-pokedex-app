@@ -1,7 +1,7 @@
 import { Box, Typography, Container } from "@mui/material";
-import { capitalizeFirstLetter } from "@/utils/textFormater";
-import PokeballSvg from "@/components/PokeballSvgBackground";
-import TypesBox from "@/components/TypesBox";
+import { capitalizeFirstLetter } from "@/app/utils/textFormater";
+import PokeballSvg from "@/app/components/PokeballSvgBackground";
+import TypesBox from "@/app/components/TypesBox";
 
 const PokemonBigSoloCard = async (pokemon: any) => {
   return (

@@ -1,4 +1,4 @@
-import { HandleTypesProps } from "@/interfaces/interfaces";
+import { HandleTypesProps } from "@/app/interfaces/interfaces";
 
 export const handleType = ({ type, list }: HandleTypesProps) => {
   const typeObject = list.find((item: any) => item.name === type);

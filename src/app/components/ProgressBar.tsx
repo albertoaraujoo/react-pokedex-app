@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { calculateProgress } from "@/utils/calculateProgress";
-import { getProgressBarColor } from "@/utils/getProgressBarColor";
+import { calculateProgress } from "@/app/utils/calculateProgress";
+import { getProgressBarColor } from "@/app/utils/getProgressBarColor";
 
 const ProgressBar = ({ value }: { value: number }) => {
   const rightValue = calculateProgress(value);

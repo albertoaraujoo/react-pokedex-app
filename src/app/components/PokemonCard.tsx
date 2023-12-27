@@ -1,11 +1,11 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import { capitalizeFirstLetter } from "@/utils/textFormater";
-import PokeballSvg from "@/components/PokeballSvgBackground";
-import { PokemonData } from "@/interfaces/interfaces";
+import { capitalizeFirstLetter } from "@/app/utils/textFormater";
+import PokeballSvg from "@/app/components/PokeballSvgBackground";
+import { PokemonData } from "@/app/interfaces/interfaces";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import TypesBox from "@/components/TypesBox";
+import TypesBox from "@/app/components/TypesBox";
 
 const PokemonCard = ({
   name,

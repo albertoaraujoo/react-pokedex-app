@@ -1,7 +1,7 @@
 "use client";
 import { List, ListItem } from "@mui/material";
-import { capitalizeFirstLetter } from "@/utils/textFormater";
-import { SearchListProps, SelectData } from "@/interfaces/interfaces";
+import { capitalizeFirstLetter } from "@/app/utils/textFormater";
+import { SearchListProps, SelectData } from "@/app/interfaces/interfaces";
 import { useRouter } from "next/navigation";
 
 const SearchList = ({

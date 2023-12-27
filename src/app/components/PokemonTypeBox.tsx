@@ -1,4 +1,4 @@
-import { PokemonTypeBoxProps } from "@/interfaces/interfaces";
+import { PokemonTypeBoxProps } from "@/app/interfaces/interfaces";
 import { Box } from "@mui/material";
 import React from "react";
 

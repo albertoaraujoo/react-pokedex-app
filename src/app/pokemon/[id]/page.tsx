@@ -1,4 +1,4 @@
-import PokemonStats from "@/sections/PokemonStats";
+import PokemonStats from "@/app/sections/PokemonStats";
 
 export default function Pokemon({ params }: { params: { id: string } }) {
   const id = params.id;

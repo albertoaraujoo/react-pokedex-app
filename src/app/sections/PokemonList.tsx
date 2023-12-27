@@ -1,11 +1,11 @@
 "use client";
-import { PokeDataFetching } from "@/Hooks/useDataFetching";
-import Loading from "@/components/Loading";
-import PokemonCard from "@/components/PokemonCard";
-import PrevAndNextButtons from "@/components/PrevAndNextButtonsMainPage";
-import { PokemonData } from "@/interfaces/interfaces";
-import { useIsPokelistStore } from "@/stores/useIsPokelistStore";
-import { useOffsetStore } from "@/stores/useOffsetStore";
+import { PokeDataFetching } from "@/app/Hooks/useDataFetching";
+import Loading from "@/app/components/Loading";
+import PokemonCard from "@/app/components/PokemonCard";
+import PrevAndNextButtons from "@/app/components/PrevAndNextButtonsMainPage";
+import { PokemonData } from "@/app/interfaces/interfaces";
+import { useIsPokelistStore } from "@/app/stores/useIsPokelistStore";
+import { useOffsetStore } from "@/app/stores/useOffsetStore";
 import { Container, Grid } from "@mui/material";
 import { useState, useEffect } from "react";
 

@@ -1,16 +1,16 @@
 import { Box, Container } from "@mui/material";
-import { IdProp } from "@/interfaces/interfaces";
-import { PokemonSoloStats } from "@/Hooks/useDataFetching";
-import WeaknessAndResistances from "@/components/WeaknessAndResistances";
-import Evolutions from "@/components/Evolutions";
-import BaseStats from "@/components/BaseStats";
-import { handleColor } from "@/Hooks/useGetColorAndType";
-import { allPokemonTypes } from "@/utils/AllPokemonTypes";
-import Shiny from "@/components/Shiny";
+import { IdProp } from "@/app/interfaces/interfaces";
+import { PokemonSoloStats } from "@/app/Hooks/useDataFetching";
+import WeaknessAndResistances from "@/app/components/WeaknessAndResistances";
+import Evolutions from "@/app/components/Evolutions";
+import BaseStats from "@/app/components/BaseStats";
+import { handleColor } from "@/app/Hooks/useGetColorAndType";
+import { allPokemonTypes } from "@/app/utils/AllPokemonTypes";
+import Shiny from "@/app/components/Shiny";
 
-import PrevAndNextButtonsSoloPage from "@/components/PrevAndNextButtonsSoloPage";
-import ButtonHome from "@/components/ButtonHome";
-import PokemonBigSoloCard from "@/components/PokemonBigSoloCard";
+import PrevAndNextButtonsSoloPage from "@/app/components/PrevAndNextButtonsSoloPage";
+import ButtonHome from "@/app/components/ButtonHome";
+import PokemonBigSoloCard from "@/app/components/PokemonBigSoloCard";
 
 const PokemonStats = async ({ id }: IdProp) => {
   const pokemon = await PokemonSoloStats(id);

@@ -1,6 +1,6 @@
 "use client";
-import { ButtonHomeProps } from "@/interfaces/interfaces";
-import Arrow from "@/components//Arrow";
+import { ButtonHomeProps } from "@/app/interfaces/interfaces";
+import Arrow from "@/app/components/Arrow";
 import { useRouter } from "next/navigation";
 import { Box } from "@mui/material";
 

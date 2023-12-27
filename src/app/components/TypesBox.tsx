@@ -1,11 +1,11 @@
 "use client";
 import { Box } from "@mui/material";
-import { handleType, handleColor } from "@/Hooks/useGetColorAndType";
-import { PokemonTypes } from "@/interfaces/interfaces";
-import TypeComponent from "@/components/TypeComponent";
-import { allPokemonTypes } from "@/utils/AllPokemonTypes";
-import { capitalizeFirstLetter } from "@/utils/textFormater";
-import PokemonTypeBox from "@/components/PokemonTypeBox";
+import { handleType, handleColor } from "@/app/Hooks/useGetColorAndType";
+import { PokemonTypes } from "@/app/interfaces/interfaces";
+import TypeComponent from "@/app/components/TypeComponent";
+import { allPokemonTypes } from "@/app/utils/AllPokemonTypes";
+import { capitalizeFirstLetter } from "@/app/utils/textFormater";
+import PokemonTypeBox from "@/app/components/PokemonTypeBox";
 
 const TypesBox = ({
   type1,

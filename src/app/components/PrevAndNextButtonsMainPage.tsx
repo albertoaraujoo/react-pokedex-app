@@ -1,5 +1,5 @@
-import Arrow from "@/components/Arrow";
-import { PrevAndNextButtonMainPage } from "@/interfaces/interfaces";
+import Arrow from "@/app/components/Arrow";
+import { PrevAndNextButtonMainPage } from "@/app/interfaces/interfaces";
 
 import { Box } from "@mui/material";
 

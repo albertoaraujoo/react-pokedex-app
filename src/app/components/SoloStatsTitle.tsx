@@ -1,4 +1,4 @@
-import { StatsTitle } from "@/interfaces/interfaces";
+import { StatsTitle } from "@/app/interfaces/interfaces";
 import { Typography } from "@mui/material";
 
 const SoloStatsTitle = ({ text }: StatsTitle) => {

@@ -1,4 +1,4 @@
-import { ArrowProps } from "@/interfaces/interfaces";
+import { ArrowProps } from "@/app/interfaces/interfaces";
 import { Button, SvgIcon } from "@mui/material";
 
 const Arrow = ({ width, height, direction, color, onClick }: ArrowProps) => {

@@ -1,11 +1,11 @@
 import { Box, Container } from "@mui/material";
-import PokemonCard from "@/components/PokemonCard";
-import SoloStatsTitle from "@/components/SoloStatsTitle";
-import { useHandleEvolutionsCards } from "@/Hooks/useHandleEvolutionsCards";
+import PokemonCard from "@/app/components/PokemonCard";
+import SoloStatsTitle from "@/app/components/SoloStatsTitle";
+import { useHandleEvolutionsCards } from "@/app/Hooks/useHandleEvolutionsCards";
 import {
   PokemonData,
   WeaknessAndResistancesProps,
-} from "@/interfaces/interfaces";
+} from "@/app/interfaces/interfaces";
 
 const Evolutions = async ({ pokemon, color }: WeaknessAndResistancesProps) => {
   const evolutionsData = await useHandleEvolutionsCards(pokemon);

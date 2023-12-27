@@ -1,4 +1,4 @@
-import { SelectData } from "@/interfaces/interfaces";
+import { SelectData } from "@/app/interfaces/interfaces";
 
 export const SelectDataFetch = async (
   offset: number = 0,
