@@ -3,6 +3,7 @@ import { List, ListItem } from "@mui/material";
 import { capitalizeFirstLetter } from "@/app/utils/textFormater";
 import { SearchListProps, SelectData } from "@/app/interfaces/interfaces";
 import { useRouter } from "next/navigation";
+import { useOpenSearchList } from "../stores/useOpenSearchList";
 
 const SearchList = ({
   open,
@@ -11,6 +12,7 @@ const SearchList = ({
   inputValue,
 }: SearchListProps) => {
   const router = useRouter();
+  const setOpen = useOpenSearchList((state) => state.setOpen);
 
   return (
     <>
@@ -24,6 +26,7 @@ const SearchList = ({
                 onClick={(e) => {
                   e.stopPropagation();
                   router.push(`/pokemon/${pokemon.order.toString()}`);
+                  setOpen(false);
                 }}
               >
                 {capitalizeFirstLetter(pokemon.name)}
@@ -39,6 +42,7 @@ const SearchList = ({
                 onClick={(e) => {
                   e.stopPropagation();
                   router.push(`/pokemon/${pokemon.order.toString()}`);
+                  setOpen(false);
                 }}
               >
                 {capitalizeFirstLetter(pokemon.name)}

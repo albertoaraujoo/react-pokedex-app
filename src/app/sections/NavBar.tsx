@@ -4,12 +4,14 @@ import { useOffsetStore } from "@/app/stores/useOffsetStore";
 import { AppBar, Box } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import SearchField from "@/app/components/SearchField";
+import { useOpenSearchList } from "../stores/useOpenSearchList";
 
 const Navbar = () => {
   const offset = useOffsetStore((state) => state.offset);
   const setOffset = useOffsetStore((state) => state.setOffset);
   const url = usePathname();
   const router = useRouter();
+  const setOpen = useOpenSearchList((state) => state.setOpen);
 
   const handleOffsetInNavbar = () => {
     url === "/" ? setOffset(0) : setOffset(offset);
@@ -19,7 +21,13 @@ const Navbar = () => {
   return (
     <Box>
       <AppBar sx={styles.navbar}>
-        <Box onClick={handleOffsetInNavbar} sx={styles.logoAndText}>
+        <Box
+          onClick={() => {
+            handleOffsetInNavbar();
+            setOpen(false);
+          }}
+          sx={styles.logoAndText}
+        >
           <IconPokeball />
           Pokédex
         </Box>

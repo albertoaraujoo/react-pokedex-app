@@ -92,6 +92,8 @@ const styles = {
 
   resistanceAndWeaknessBox: {
     display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     flexWrap: "wrap",
     gap: "10px",
   },

@@ -60,90 +60,134 @@ export const PokemonSoloStats = async (id: string) => {
   return {
     pokemonData: pokemonData,
     speciesData: speciesData,
-    evolutionData: [
-      {
-        fetch: await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${evolutionData.chain.species.name}`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            return {
-              name: data.name,
-              order: data.id,
-              url: data.species.url,
-              sprite: data.sprites.other["official-artwork"].front_default,
-              animatedSprite: data.sprites.versions["generation-v"][
-                "black-white"
-              ].animated.front_default
-                ? data.sprites.versions["generation-v"]["black-white"].animated
-                    .front_default
+    evolutionData:
+      evolutionData.chain.evolves_to.length > 1
+        ? await Promise.all(
+            evolutionData.chain.evolves_to.map(async (evolution: any) => ({
+              fetch: await fetch(
+                `https://pokeapi.co/api/v2/pokemon/${evolution.species.name}`
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  return {
+                    name: data.name,
+                    order: data.id,
+                    url: data.species.url,
+                    sprite:
+                      data.sprites.other["official-artwork"].front_default,
+                    animatedSprite: data.sprites.versions["generation-v"][
+                      "black-white"
+                    ].animated.front_default
+                      ? data.sprites.versions["generation-v"]["black-white"]
+                          .animated.front_default
+                      : null,
+                    types: {
+                      type1: data.types[0]?.type?.name || null,
+                      type2:
+                        data.types.length > 1 ? data.types[1].type.name : "",
+                    },
+                  };
+                })
+                .catch((err) => {
+                  console.log("error:" + err);
+                }),
+            }))
+          )
+        : [
+            {
+              fetch: await fetch(
+                `https://pokeapi.co/api/v2/pokemon/${evolutionData.chain.species.name}`
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  return {
+                    name: data.name,
+                    order: data.id,
+                    url: data.species.url,
+                    sprite:
+                      data.sprites.other["official-artwork"].front_default,
+                    animatedSprite: data.sprites.versions["generation-v"][
+                      "black-white"
+                    ].animated.front_default
+                      ? data.sprites.versions["generation-v"]["black-white"]
+                          .animated.front_default
+                      : null,
+                    types: {
+                      type1: data.types[0]?.type?.name || null,
+                      type2:
+                        data.types.length > 1 ? data.types[1].type.name : "",
+                    },
+                  };
+                })
+                .catch((err) => {
+                  console.log("error:" + err);
+                }),
+            },
+            {
+              fetch: evolutionData?.chain.evolves_to[0]?.species.name
+                ? await fetch(
+                    `https://pokeapi.co/api/v2/pokemon/${evolutionData?.chain.evolves_to[0]?.species.name}`
+                  )
+                    .then((res) => res.json())
+                    .then((data) => {
+                      return {
+                        name: data.name,
+                        order: data.id,
+                        url: data.species.url,
+                        sprite:
+                          data.sprites.other["official-artwork"].front_default,
+                        animatedSprite: data.sprites.versions["generation-v"][
+                          "black-white"
+                        ].animated.front_default
+                          ? data.sprites.versions["generation-v"]["black-white"]
+                              .animated.front_default
+                          : null,
+                        types: {
+                          type1: data.types[0]?.type?.name || null,
+                          type2:
+                            data.types.length > 1
+                              ? data.types[1].type.name
+                              : "",
+                        },
+                      };
+                    })
+                    .catch((err) => {
+                      console.log("an error has occurred:" + err);
+                    })
                 : null,
-              types: {
-                type1: data.types[0]?.type?.name || null,
-                type2: data.types.length > 1 ? data.types[1].type.name : "",
-              },
-            };
-          })
-          .catch((err) => {
-            console.log("error:" + err);
-          }),
-      },
-      {
-        fetch: evolutionData?.chain.evolves_to[0]?.species.name
-          ? await fetch(
-              `https://pokeapi.co/api/v2/pokemon/${evolutionData?.chain.evolves_to[0]?.species.name}`
-            )
-              .then((res) => res.json())
-              .then((data) => {
-                return {
-                  name: data.name,
-                  order: data.id,
-                  url: data.species.url,
-                  sprite: data.sprites.other["official-artwork"].front_default,
-                  animatedSprite: data.sprites.versions["generation-v"][
-                    "black-white"
-                  ].animated.front_default
-                    ? data.sprites.versions["generation-v"]["black-white"]
-                        .animated.front_default
-                    : null,
-                  types: {
-                    type1: data.types[0]?.type?.name || null,
-                    type2: data.types.length > 1 ? data.types[1].type.name : "",
-                  },
-                };
-              })
-              .catch((err) => {
-                console.log("an error has occurred:" + err);
-              })
-          : null,
-      },
+            },
 
-      {
-        fetch: evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species.name
-          ? await fetch(
-              `https://pokeapi.co/api/v2/pokemon/${evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species.name}`
-            )
-              .then((res) => res.json())
-              .then((data) => {
-                return {
-                  name: data.name,
-                  order: data.id,
-                  url: data.species.url,
-                  sprite: data.sprites.other["official-artwork"].front_default,
-                  animatedSprite: data.sprites.versions["generation-v"][
-                    "black-white"
-                  ].animated.front_default
-                    ? data.sprites.versions["generation-v"]["black-white"]
-                        .animated.front_default
-                    : null,
-                  types: {
-                    type1: data.types[0]?.type?.name || null,
-                    type2: data.types.length > 1 ? data.types[1].type.name : "",
-                  },
-                };
-              })
-          : null,
-      },
-    ],
+            {
+              fetch: evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species
+                .name
+                ? await fetch(
+                    `https://pokeapi.co/api/v2/pokemon/${evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species.name}`
+                  )
+                    .then((res) => res.json())
+                    .then((data) => {
+                      return {
+                        name: data.name,
+                        order: data.id,
+                        url: data.species.url,
+                        sprite:
+                          data.sprites.other["official-artwork"].front_default,
+                        animatedSprite: data.sprites.versions["generation-v"][
+                          "black-white"
+                        ].animated.front_default
+                          ? data.sprites.versions["generation-v"]["black-white"]
+                              .animated.front_default
+                          : null,
+                        types: {
+                          type1: data.types[0]?.type?.name || null,
+                          type2:
+                            data.types.length > 1
+                              ? data.types[1].type.name
+                              : "",
+                        },
+                      };
+                    })
+                : null,
+            },
+          ],
   };
 };

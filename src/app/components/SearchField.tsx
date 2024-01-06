@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import ArrowSelect from "@/app/components/ArrowSelect";
 import SearchList from "@/app/components/SearchList";
 import { useIsPokelistStore } from "@/app/stores/useIsPokelistStore";
+import { useOpenSearchList } from "../stores/useOpenSearchList";
+import { usePathname } from "next/navigation";
 
 const SearchField = () => {
   const [selectData, setSelectData] = useState<SelectData[]>([]);
@@ -14,8 +16,10 @@ const SearchField = () => {
   const [filteredSelectData, setFilteredSelectData] = useState<SelectData[]>(
     []
   );
-  const [open, setOpen] = useState(false);
+  const open = useOpenSearchList((state) => state.open);
+  const setOpen = useOpenSearchList((state) => state.setOpen);
   const isPokelist = useIsPokelistStore((state) => state.isPokelist);
+  const url = usePathname();
 
   const toggleOpen = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -23,14 +27,17 @@ const SearchField = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (isPokelist) {
+      if (url != "/") {
+        const data = await SelectDataFetch();
+        setSelectData(data);
+      } else if (url == "/" && isPokelist) {
         const data = await SelectDataFetch();
         setSelectData(data);
       }
     };
 
     fetchData();
-  }, [isPokelist]);
+  }, [isPokelist, url]);
 
   useEffect(() => {
     const filteredData = filterData(selectData, inputValue);

@@ -56,11 +56,13 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: { xs: "25px", sm: "0px" },
   },
   pokemonSprite: {
     width: { xs: "100%", md: "475px" },
   },
   name: {
+    textAlign: "center",
     fontWeight: 700,
     fontFamily: "var(--font-monteserrat)",
     fontSize: { xs: "25px", sm: "28px", md: "30px", lg: "34px" },

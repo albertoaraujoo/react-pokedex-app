@@ -6,6 +6,7 @@ import { PokemonData } from "@/app/interfaces/interfaces";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import TypesBox from "@/app/components/TypesBox";
+import { useOpenSearchList } from "../stores/useOpenSearchList";
 
 const PokemonCard = ({
   name,
@@ -19,6 +20,8 @@ const PokemonCard = ({
   const [image, setImage] = useState(sprite);
 
   const [onMove, setOnMove] = useState(false);
+
+  const setOpen = useOpenSearchList((state) => state.setOpen);
 
   return (
     <Box sx={styles.card}>
@@ -47,6 +50,7 @@ const PokemonCard = ({
             }}
             onClick={() => {
               router.push(`/pokemon/${order}`);
+              setOpen(false);
             }}
           />
         </Box>
